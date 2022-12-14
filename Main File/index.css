@@ -1,0 +1,404 @@
+.Maindiv {
+    width: 99%;
+}
+
+.divfirst {
+
+    background: linear-gradient(rgb(0, 1, 51) 0%, rgb(15, 16, 72) 100%);
+    padding-top: 40px;
+    color: aliceblue;
+}
+
+.fontofhtag {
+    color: aliceblue;
+    text-align: center;
+
+    font-family: Poppins, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 35px;
+}
+
+.ptag {
+    color: aliceblue;
+    /* background-color: rgb(11, 11, 110); */
+    font-family: Poppins, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.Maindivofdivs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Maindivofdivs h4 {
+    text-align: center;
+}
+
+.border1 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border2 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border3 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border4 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border5 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border6 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border7 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border8 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border9 {
+    border: 1px solid;
+    border-radius: 9px;
+}
+
+.border1:hover {
+    border: 3px solid gold;
+
+    border-radius: 21px;
+
+}
+
+.border2:hover {
+    border: 3px solid rgb(0, 255, 26);
+
+    border-radius: 21px;
+
+}
+
+.border3:hover {
+    border: 3px solid rgb(0, 136, 255);
+
+    border-radius: 21px;
+
+}
+
+.border4:hover {
+    border: 3px solid rgb(10, 124, 104);
+
+    border-radius: 21px;
+
+}
+
+.border5:hover {
+    border: 3px solid rgb(7, 19, 191);
+
+    border-radius: 21px;
+
+}
+
+.border6:hover {
+    border: 3px solid rgb(111, 146, 9);
+
+    border-radius: 21px;
+
+}
+
+.border7:hover {
+    border: 3px solid rgb(0, 255, 217);
+
+    border-radius: 21px;
+
+}
+
+.border8:hover {
+
+    border-radius: 21px;
+    border: 3px solid rgb(255, 153, 0);
+    /* border-radius: 9px; */
+
+}
+
+.border9:hover {
+
+    border-radius: 21px;
+    border: 3px solid rgb(209, 26, 209);
+    /* border-radius: 9px; */
+
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: aliceblue;
+    padding: 21px;
+    margin-top: 38px;
+}
+
+.getstartbt {
+    padding: 22px;
+    padding-right: 22px;
+    padding-left: 22px;
+    padding-left: 40px;
+    padding-right: 36px;
+    border-radius: 32px;
+    border: none;
+    color: aliceblue;
+    background-color: #6161FF;
+    font-size: 20px;
+}
+
+.getbtnunder {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 22px;
+}
+
+.blue-bg {
+    position: relative;
+    background: url("https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/first_fold/image.png");
+    background-size: cover;
+    background-color: #58aff6;
+    /* top: 0; */
+    height: 500px;
+    width: 100%;
+    z-index: -4;
+    overflow-x: hidden;
+}
+
+.white-bg {
+    position: relative;
+
+    top: -10;
+    background-color: #fff;
+    min-height: 100px;
+    margin: 00px 0px;
+    width: 100%;
+    height: 130px;
+    margin-top: -73px;
+    transform: skewY(4deg);
+    z-index: -1;
+}
+
+.MainHeadingofpage {
+    text-align: center;
+    font-size: 31px;
+}
+
+.GridImg {
+
+    display: grid;
+    width: 500px;
+    gap: 12px;
+    margin: auto;
+    /* border: 2px solid; */
+    justify-items: center;
+    /* justify-content: center;  */
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.GridImg img {
+
+    max-width: 54%;
+
+}
+
+.divofcontent {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 32px;
+}
+
+.getstartbtn {
+    padding: 12px;
+    border-radius: 32px;
+    border: none;
+    color: aliceblue;
+    background-color: #6161FF;
+    font-size: 20px;
+
+}
+
+.i {
+    grid-area: d1;
+}
+
+.i1 {
+    grid-area: d2;
+}
+
+.i2 {
+    grid-area: d3;
+}
+
+.i3 {
+    grid-area: d4;
+}
+
+.itemofgrid9 img {
+    width: 44%;
+    float: right;
+    margin-top: -260px;
+    margin-left: -20px;
+
+}
+
+.itemofgrid8 div {
+    border: 1px solid black;
+}
+
+.itemofgrid8 {
+    grid-area: item2;
+
+
+}
+
+.itemofgrid7 {
+    grid-area: item3;
+
+}
+
+.itemofgrid6 {
+
+    padding-right: 92px;
+    grid-area: item4;
+    margin-left: 39px;
+    border-left-width: 0px;
+    border-left-style: solid;
+    margin-left: 169px;
+    padding-right: 0px;
+    margin-right: -212px;
+    border-right-width: 0px;
+    border-right-style: solid;
+    padding-left: -25px;
+    margin-top: -60px;
+    grid-area: item4;
+    margin-left: 39px;
+    border-left-width: 0px;
+    border-left-style: solid;
+    margin-left: 200px;
+    padding-right: 0px;
+    margin-right: -297px;
+    border-right-width: 0px;
+    border-right-style: solid;
+    padding-left: -25px;
+    margin-top: -52px;
+    padding-right: 92px;
+    margin-bottom: 18px;
+
+}
+
+.itemofgrid5 {
+    grid-area: item5;
+    margin-top: -98px;
+    padding-right: 92px;
+}
+
+.itemofgrid4 {
+    grid-area: item6;
+
+}
+
+.itemofgrid3 {
+    grid-area: item7;
+
+}
+
+.itemofgrid2 {
+    grid-area: item8;
+    /* margin-top: 38px; */
+    margin-top: -100px;
+
+}
+
+.itemofgrid1 {
+    grid-area: item9;
+
+}
+
+.itemofgrid img {
+    width: 120px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+
+
+.itemofgrid {
+    margin-top: 12px;
+    margin-top: 64px;
+    display: grid;
+    margin: 12px;
+    padding: 1px;
+    grid-template-areas:
+        "item9  item6  item7       item3 item2 . "
+        "item8   .  item7    .     .  . "
+        "item5 item5 item5 . . .  "
+
+        "item4 . . . . .";
+
+
+}
+
+.white-bg2 {
+
+  
+    top: 10;
+    padding-top: 1px;margin-top: 600px;
+    background: linear-gradient(rgb(0, 1, 51) 0%, rgb(15, 16, 72) 100%);
+    min-height: 100px;
+    margin: 00px 0px;
+    width: 100%;
+    height: 130px;
+    margin-top: -4px;
+    transform: skewY(6deg);
+    z-index: -1;
+}
+
+.white-bg3 {
+
+  
+    top: 10;
+    padding-top: 1px;margin-top: 600px;
+    background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%); min-height: 100px;
+    margin: 00px 0px;
+    width: 100%;
+    height: 46px;
+    margin-top: -59px;
+    transform: skewY(1deg);
+    z-index: -1;
+}
+
+#lastOfpaeg{
+
+    background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%);
+    margin-top: -31px;
+    color: rgb(255, 255, 255);   
+}
+#last{
+    display: flex;
+    justify-content: space-around;
+}
