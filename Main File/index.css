@@ -1,0 +1,203 @@
+/* mid 2 sachin  */
+#small-nav-tag{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: auto;
+    width: 60%;
+    margin: auto;
+    column-gap: 1%;
+    row-gap: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(6, 6, 243, 0.1) 0px 4px 16px, rgba(13, 13, 244, 0.05) 0px 8px 32px;
+}
+#small-nav-tag>div{
+ 
+    text-align: center;
+    padding-top: 10px;
+    
+}
+#small-nav-tag>div:hover{
+     background-color: rgb(236, 236, 255);
+}
+
+#small-nav-tag>div>img{
+    width: 18%;
+}
+
+#video_and_eachTag{
+   display:flex;
+   /* grid-template-columns: 70vw 30vw; */
+   margin: auto;
+   width: 80%;
+   margin-top: 5vw;
+ 
+}
+#video_teamIteration{
+    width: 60%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid rgb(73, 78, 229);
+    box-shadow: rgba(21, 21, 244, 0.1) 0px 4px 16px, rgba(25, 25, 247, 0.1) 0px 8px 24px, rgba(100, 100, 254, 0.1) 0px 16px 56px;
+}
+#eachTagDiv{
+    width: 40%;
+ 
+    padding-left: 5vw;
+    padding-top: 10vw;
+    color: rgb(84, 84, 215);
+}
+#three_diff_div{
+    text-align: center;
+}
+.triangle-right_1 {
+    width: 0;
+	height: 0;
+	border-top:180px  solid transparent;
+	border-left: 1250px solid rgb(236, 236, 254);
+	border-bottom: 0px solid transparent;
+}
+.triangle-right_2 {
+	width: 0;
+	height: 0;
+	border-top: 180px solid transparent;
+	border-left: 1250px solid rgb(26, 14, 97);
+	border-bottom: 0px solid transparent;
+}
+.triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-right: 1250px solid rgb(26, 14, 97);
+	border-bottom: 180px solid transparent;
+}
+#five-imageWith-data{
+    display: flex;
+    width: 80%;
+    margin: auto;
+   border-radius: 10px;
+    box-shadow: rgba(58, 44, 255, 0.35) 0px 5px 15px;
+}
+#allfiveImg{
+width: 35%;
+
+}
+.each_Div_Of_fiveImg{
+    background-color: rgb(236, 249, 254);
+    border-radius: 10px 0px 0px 0px 10;
+}
+.each_Div_Of_fiveImg:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+#dataOfall_five_Img{
+    width: 65%;
+  
+    padding: 5%;
+}
+.fiveImgButton{
+    padding: 2% 5%;
+    border-radius: 25px;
+    border: 0.5px solid grey;
+    background-color: white;
+}
+.slideShowMainDiv{
+    width: 90%;
+    display: flex;
+    border: 1px solid rgb(255, 255, 255);
+    margin: auto;
+}
+.beyond_slideshow{
+    width: 35%;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.slide_show{
+    width: 65%;
+    border: 1px solid rgb(255, 255, 255);
+   
+}
+#slideShow_data{
+    border: 1px solid rgb(255, 255, 255) ;
+    position: relative;
+   width: 55%;
+    margin: auto;
+    border-radius: 20px;
+    height: 35%;
+    margin-top: 10vh;
+    padding: 8%;
+    background-color: rgb(86, 86, 216);
+    color: white;
+    box-shadow:  rgb(159, 159, 255)0px 22px 70px 4px;
+}
+#slideShow_img_div{
+    border: 1px solid rgb(0, 0, 0) ;
+    position: absolute;
+    background: lightgray;
+    border-radius: 20px;
+    height: 65%;  
+    width: 40%;
+    left: 80%;
+    top: 80%;
+}
+#feedbackDiv{
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+}
+#Fiveimage_inCircle{
+padding: 5%;
+}
+#Fiveimage_inCircle{
+    width: 40%;
+    border: 1px solid rgb(255, 255, 255);
+}
+#feedbackData{
+    width: 60%;
+    border: 1px solid rgb(253, 253, 253);
+    padding: 3%;
+}
+#phone_heart_time{
+    display: flex;
+    width: 100%;
+}
+#feedback_button{
+    padding: 10px 25px;
+    border: 1px solid white;
+    background-color: rgb(83, 83, 255);
+    border-radius: 25px;
+    color: white;
+    margin-top: 10vh;
+}
+@media screen and (max-width:1100px) and  (max-width:900px){
+    .triangle-right_1 {
+        width: 0;
+        height: 0;
+        border-top:180px  solid transparent;
+        border-left: 1250px solid rgb(236, 236, 254);
+        border-bottom: 0px solid transparent;
+    }
+    .triangle-right_2 {
+        width: 0;
+        height: 0;
+        border-top: 180px solid transparent;
+        border-left: 1650px solid rgb(26, 14, 97);
+        border-bottom: 0px solid transparent;
+    }
+    .triangle-left {
+        width: 0;
+        height: 0;
+        border-top: 0px solid transparent;
+        border-right: 1250px solid rgb(26, 14, 97);
+        border-bottom: 180px solid transparent;
+    }
+}
+@media screen and (max-width:1100px) and  (max-width:900px){
+    #five-imageWith-data{
+       
+        width: 100%;
+
+    }  
+}
+/* mid 2 sachin  */
