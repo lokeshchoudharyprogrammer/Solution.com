@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: repeat(7,1fr);
     grid-template-rows: auto;
+    overflow: scroll;
     width: 60%;
     margin: auto;
     column-gap: 1%;
@@ -53,21 +54,21 @@
     width: 0;
 	height: 0;
 	border-top:180px  solid transparent;
-	border-left: 1250px solid rgb(236, 236, 254);
+	border-left: 100vw solid rgb(236, 236, 254);
 	border-bottom: 0px solid transparent;
 }
 .triangle-right_2 {
 	width: 0;
 	height: 0;
 	border-top: 180px solid transparent;
-	border-left: 1250px solid rgb(26, 14, 97);
+	border-left: 100vw solid rgb(26, 14, 97);
 	border-bottom: 0px solid transparent;
 }
 .triangle-left {
 	width: 0;
 	height: 0;
 	border-top: 0px solid transparent;
-	border-right: 1250px solid rgb(26, 14, 97);
+	border-right: 100vw solid rgb(26, 14, 97);
 	border-bottom: 180px solid transparent;
 }
 #five-imageWith-data{
@@ -84,6 +85,7 @@ width: 35%;
 .each_Div_Of_fiveImg{
     background-color: rgb(236, 249, 254);
     border-radius: 10px 0px 0px 0px 10;
+    height:auto;
 }
 .each_Div_Of_fiveImg:hover{
     background-color: rgb(255, 255, 255);
@@ -139,6 +141,7 @@ width: 35%;
     width: 40%;
     left: 80%;
     top: 80%;
+    box-shadow:  rgb(159, 159, 255)0px 22px 70px 4px;
 }
 #feedbackDiv{
     width: 80%;
@@ -170,35 +173,92 @@ padding: 5%;
     color: white;
     margin-top: 10vh;
 }
-@media screen and (max-width:1100px) and  (max-width:900px){
+#fiveStaraMainBox{
+ 
+    text-align: center;
+    width: 95%;
+    height: 90vh;
+    margin: auto;
+   
+}
+#fouCard_mainDiv{
+    display: flex;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 2%;
+  
+    height: 65%;
+    background-color: #f2f6f9;
+    box-shadow: rgba(160, 197, 243, 0.35) 0px 5px 15px;
+}
+#fouCard_mainDiv>div{
+    text-align: center;
+    padding: 3%;
+    width: 23%;
+ 
+    border-radius: 15px;
+    background-color: white;
+}
+#fouCard_mainDiv>div>div{
+height: 40%;
+
+}
+#fouCard_mainDiv>div>div>img{
+    width: 50%;
+
+}
+#last_of_mid2{
+    background-color: #181853;
+    text-align: center;
+    width: 100%;
+}
+#last_of_mid2>button{
+    background-color: #6060f8;
+    color: white;
+    border-radius: 25px;
+    padding: 12px 35px;
+    font-size: 90%;
+}
+#last_of_mid2>div{
+    width: 100%;
+    height: 10vh;
+    margin-top: 10vh;
+    background-color: #d1a736;
+}
+@media screen and (min-width:900px) and  (max-width:1100px){
     .triangle-right_1 {
         width: 0;
         height: 0;
         border-top:180px  solid transparent;
-        border-left: 1250px solid rgb(236, 236, 254);
+        border-left: 100vw solid rgb(236, 236, 254);
         border-bottom: 0px solid transparent;
     }
     .triangle-right_2 {
         width: 0;
         height: 0;
         border-top: 180px solid transparent;
-        border-left: 1650px solid rgb(26, 14, 97);
+        border-left: 100vw solid rgb(26, 14, 97);
         border-bottom: 0px solid transparent;
     }
     .triangle-left {
         width: 0;
         height: 0;
         border-top: 0px solid transparent;
-        border-right: 1250px solid rgb(26, 14, 97);
+        border-right: 100vw solid rgb(26, 14, 97);
         border-bottom: 180px solid transparent;
     }
 }
-@media screen and (max-width:1100px) and  (max-width:900px){
+@media screen and (min-width:600px) and  (max-width:899px){
     #five-imageWith-data{
        
         width: 100%;
 
     }  
+}
+@media screen and (min-width:400px) and  (max-width:599px){
+
+}
+@media screen and (min-width:150px) and  (max-width:399px){
+
 }
 /* mid 2 sachin  */
 
@@ -615,7 +675,9 @@ padding: 5%;
     width: 600px;
     height: 800px;
     color: aliceblue;
-    overflow: scroll;
+    /* overflow: scroll; */
+    overflow-y: auto;
+    
     justify-content: space-between;
   }
   .newscroll> div{
