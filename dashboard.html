@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
         body {
             background-color: #fff;
         }
@@ -69,6 +71,7 @@
             height: 12%;
             display: flex;
             align-items: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
         #main2_child_1>div {
@@ -148,10 +151,162 @@
         }
 
         #left_panel {
-            width: 75%;
+            width: 80%;
             margin: 15px;
             /* border: 2px solid brown; */
+
+            background-color: var(--white);
+            max-width: 900px;
+            width: 90%;
+            border-radius: 8px;
+            height: 110%;
+            -webkit-box-shadow:  rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
+        
+
+        /* Properties fro left panel elements */
+
+
+        .main-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-left: 3rem;
+            margin-right: 3rem;
+            margin-top: 3.5rem;
+            gap: 0.2rem;
+            height: 100%;
+        }
+
+        /* Q List */
+
+        .main-item {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            margin: 10px 0px;
+            height: 100%;
+        }
+
+        .main-item p {
+            font-size: 1.2rem;
+        }
+
+        .arrow-block {
+            width: 2rem;
+            text-align: center;
+            height: 100%;
+
+        }
+
+        .arrow {
+            background-repeat: no-repeat;
+            background-size: 25%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow.rotate {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+            transform-origin: 45% 45%;
+        }
+
+        .question {
+            display: flex;
+            flex-direction: row;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .question>div:nth-child(2)>h1 {
+            margin: 0px;
+            margin-top: 7px;
+            padding: 0px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #323338;
+            line-height: 1;
+            vertical-align: baseline;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        .question.active {
+            font-weight: bold;
+        }
+
+        .answer {
+            display: none;
+        }
+
+        .answer.shown {
+            width: 30%;
+            display: block;
+            padding: 10px;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border: 1px solid;
+            border-color: #e6e9ef;
+            border-radius: 8px;
+      
+            
+        }
+        .answer.shown>div>button{
+            padding: 20px;
+            background-color:#f65f7c;
+            color: white;
+            border-radius: 8px;
+            border: none;
+            font-size: 17px;
+            font-weight: bold;
+            margin-left: 5px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+
+        }
+
+        .answer.shown>div:nth-child(2) {
+            display: flex;
+            margin-top: 2px;
+        }
+
+        .answer.shown>div:nth-child(2)>div:nth-child(1) {
+            width: 15%;
+            /* font-weight: 700;
+            font-size: 16px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            margin-top: 5px; */
+        }
+
+        .answer.shown>div:nth-child(2)>div:nth-child(2) {
+            width: 85%;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            margin-top: 5px;
+        }
+        .answer.shown>div:nth-child(2)>div:nth-child(2)>a{
+            text-decoration: none;
+            font-weight: 500;
+            color:#1f76c2
+        }
+        .answer.shown>div:nth-child(2)>div:nth-child(1)>h4 {
+            margin: 0px;
+            padding: 0px;
+            width: 85%;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+        /* Properties fro left panel elements ends here */
 
         #right_panel {
             width: 20%;
@@ -268,7 +423,7 @@
             <div>
                 <div>
                     <div class="ab">
-                        <img width="150%" src="C:\Users\yakhi\OneDrive\Desktop\images\monday_logo_icon.png" alt="">
+                        <img width="150%" src="images\monday_logo_icon.png" alt="">
                     </div>
                 </div>
                 <div>
@@ -389,7 +544,7 @@
                 </div>
                 <div>
                     <div class="ab" id="person">
-                        <img width="130%" src="C:\Users\yakhi\OneDrive\Desktop\images\dapulse_default_photo.png" alt="">
+                        <img width="130%" src="images\dapulse_default_photo.png" alt="">
                     </div>
                 </div>
             </div>
@@ -403,7 +558,7 @@
                     </div>
                 </div>
                 <div>
-                    <img width="100%" src="C:\Users\yakhi\OneDrive\Desktop\images\abcd.png" alt="">
+                    <img width="100%" src="images\abcd.png" alt="">
                 </div>
                 <div>
                     <div>Give feedback</div>
@@ -412,12 +567,117 @@
             </div>
             <div id="main2_child_2">
                 <div id="left_panel">
+                    <!-- FAQ Section -->
+                    <section class="faq-section">
+                        <!-- Recently Visited/ Inbox/ My workspace -->
+                        <section class="main-list">
+                            <!--Recently Visited-->
+                            <div class="main-item">
 
+                                <div class="question">
+                                    <div>
+                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
+                                            height="24" role="button" tabindex="0" aria-hidden="false"
+                                            class="icon_component collapsible-icon icon_component--clickable">
+                                            <path
+                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
+                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+
+                                    <div>
+                                        <h1>Recently Visited</h1>
+                                    </div>
+                                </div>
+                                <!-- <p class="answer">You can invite up to 2 additional users on the Free plan. There is no
+                                    limit on
+                                    team members for the Premium plan.</p> -->
+                                <div class="answer">
+                                    <div>
+                                        <img width="100%" src="images\quick_search_recent_board.svg" alt="">
+                                    </div>
+                                    <div>
+                                        <div>
+                                        <svg viewBox="0 0 20 20" fill="currentColor" width="30"
+                                                        height="30" aria-hidden="true" aria-label="Public board">
+                                                        <path
+                                                            d="M7.5 4.5H16C16.2761 4.5 16.5 4.72386 16.5 5V15C16.5 15.2761 16.2761 15.5 16 15.5H7.5L7.5 4.5ZM6 4.5H4C3.72386 4.5 3.5 4.72386 3.5 5V15C3.5 15.2761 3.72386 15.5 4 15.5H6L6 4.5ZM2 5C2 3.89543 2.89543 3 4 3H16C17.1046 3 18 3.89543 18 5V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V5Z"
+                                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                                        </path>
+                                                    </svg></div>
+                                        <div>Your first board</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Inbox -->
+                            <div class="main-item">
+
+                                <div class="question">
+                                    <div>
+                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
+                                            height="24" role="button" tabindex="0" aria-hidden="false"
+                                            class="icon_component collapsible-icon icon_component--clickable">
+                                            <path
+                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
+                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+
+                                    <div>
+                                        <h1>Inbox</h1>
+                                    </div>
+
+                                </div>
+                                <div class="answer">
+                                    <div>
+                                        <img width="25%" src="images\damann.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <div><h4>Hi</h4></div>
+                                        <div><a href="">@ Shubham Yadav,</a></div>
+                                </div>
+
+                            </div>
+                            <!-- My Workspace -->
+                            <div class="main-item">
+
+                                <div class="question">
+                                    <div>
+                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
+                                            height="24" role="button" tabindex="0" aria-hidden="false"
+                                            class="icon_component collapsible-icon icon_component--clickable">
+                                            <path
+                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
+                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+
+                                    <div>
+                                        <h1>My workspace</h1>
+                                    </div>
+
+                                </div>
+                                <div class="answer">
+                                    <div>
+                                        <button>M</button>
+                                    </div>
+                                    <div>
+                                        <div><h4 style="font-weight: 400;">(--)</h4></div>
+                                        <div style="font-weight: 400;">My workspace</div>
+                                </div>
+                                </div>
+
+                            </div>
+
+                        </section>
+                    </section>
                 </div>
                 <div id="right_panel">
                     <div>
                         <div>
-                            <img width="100%" src="C:\Users\yakhi\OneDrive\Desktop\images\templates-banner.png" alt="">
+                            <img width="100%" src="images\templates-banner.png" alt="">
                         </div>
                         <div>
                             <div>Boost your workflow in minutes with ready-made templates</div>
@@ -430,7 +690,7 @@
                         </div>
                         <div class="learnAspire">
                             <div>
-                                <img src="C:\Users\yakhi\OneDrive\Desktop\images\get-started-2.svg" alt="">
+                                <img src="images\get-started-2.svg" alt="">
                             </div>
                             <div>
                                 <h2>Getting started</h2>
@@ -439,7 +699,7 @@
                         </div>
                         <div class="learnAspire">
                             <div>
-                                <img src="C:\Users\yakhi\OneDrive\Desktop\images\help-center.svg" alt="">
+                                <img src="images\help-center.svg" alt="">
                             </div>
                             <div>
                                 <h2>Help center</h2>
@@ -448,7 +708,7 @@
                         </div>
                         <div class="learnAspire">
                             <div>
-                                <img src="C:\Users\yakhi\OneDrive\Desktop\images\webinars.svg" alt="">
+                                <img src="images\webinars.svg" alt="">
                             </div>
                             <div>
                                 <h2>Join a webinar</h2>
@@ -460,6 +720,10 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 </body>
@@ -477,4 +741,24 @@
     menu_item2.addEventListener("mouseleave", function () {
         menu_item2.style.backgroundColor = "#292f4c";
     })
+
+
+    "use strict";
+    const allQuestions = document.querySelectorAll(".main-item");
+    const questionBlock = document.querySelectorAll(".main-list");
+
+    allQuestions.forEach((mainItem) => {
+        console.log(mainItem)
+        mainItem.addEventListener("click", function () {
+            const answerOutput = mainItem.querySelector(".answer");
+            const question = mainItem.querySelector(".question");
+            const arrow = mainItem.querySelector(".arrow");
+
+            answerOutput.classList.toggle("shown");
+            question.classList.toggle("active");
+            arrow.classList.toggle("rotate");
+        });
+    });
+
+
 </script>
