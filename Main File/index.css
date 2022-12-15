@@ -402,3 +402,72 @@
     display: flex;
     justify-content: space-around;
 }
+
+
+.newscroll{
+    scrollbar-color:rgb(1, 2, 67)  rgb(15, 16, 72) ;
+    /* scrollbar-color: rgb(142, 39, 183) rgb(0, 23, 84); */
+    width: 600px;
+    height: 800px;
+    color: aliceblue;
+    overflow: scroll;
+    justify-content: space-between;
+  }
+  .newscroll> div{
+    margin-top: 70px;
+  }
+  .borderclass{
+    border: none;
+  }
+  .fontw{
+  font-size: 41px;
+  color: rgb(255, 255, 255);
+  
+  }
+  .fontw1{
+  font-size: 19px;
+  color: rgb(255, 255, 255);
+  }
+  
+  .displayclass{
+    display: flex;
+    justify-content: space-around;
+  }
+  .displayclass img{
+    margin-top: 21px;
+    margin-right: -126px;
+  }
+  
+
+  .gtbtn{
+   
+        padding: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 32px;
+        border: none;
+        color: aliceblue;
+        background-color: #6161FF;
+        font-size: 20px;
+ 
+    
+  }
+
+  .rotate_03{
+    /* position: fixed; */
+    display: flex;
+    top: 0%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -60px 0 0 150px;
+    -webkit-animation: spin 6s linear infinite;
+    -moz-animation: spin 6s linear infinite;
+    animation: spin 6s linear infinite;
+}
+.topmax{
+    margin-top: 73px;
+    border-radius: 21px;
+}
