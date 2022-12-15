@@ -1,0 +1,20 @@
+#workspace{
+    width:70%;
+    border: 1px solid grey;
+    margin: auto;
+    /* text-align: center; */
+}
+#workspace>div{
+    margin: auto;
+    width:70%;
+    display :flex;
+    gap:20px;
+}
+
+.work_slide{
+    width:20%;
+    border: 1px solid grey;
+    display: flex;
+    gap:5px;
+    border-radius: 20px;
+}
