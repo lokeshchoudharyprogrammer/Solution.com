@@ -139,6 +139,7 @@ width: 35%;
     width: 40%;
     left: 80%;
     top: 80%;
+    box-shadow:  rgb(159, 159, 255)0px 22px 70px 4px;
 }
 #feedbackDiv{
     width: 80%;
@@ -170,6 +171,7 @@ padding: 5%;
     color: white;
     margin-top: 10vh;
 }
+
 @media screen and (max-width:1100px) and  (max-width:900px){
     .triangle-right_1 {
         width: 0;
