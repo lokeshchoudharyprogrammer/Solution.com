@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'josefin Sans', sans-serif;
+        }
+        .hero{
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid red;
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 40px;
+            padding-left: 3%;
+            padding-right: 5%;
+        }
+        .logo{
+           /* border: 1px solid red; */
+           width: 200px;
+           height: 80px;
+           text-align: center;
+        }
+        .logo img{
+            width: 100%;
+        }
+        nav ul li{
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px 10px;
+        }
+        nav ul li a{
+            color: gray;
+            text-decoration: none;
+            font-weight: bold;
+
+        }
+        nav ul li a:hover{
+            color: purple;
+            transition: .3s;
+        }
+        button{
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: bold;
+            color: black;
+            font-size: 15px;
+            transition: .4s;
+            background-color: #6161ff;
+        }
+        button:hover{
+            transform: scale(1.3);
+            cursor: pointer ;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <div class="logo"><img src="https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/img/monday-logo-x2.png" alt=""></div>
+            <ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Use cases</a></li>
+                <li><a href="#">Use cases</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact sales</a></li>
+                <li><a href="#">Log in</a></li>
+            </ul>
+
+            <button>Get Started</button>
+        </nav>
+    </div>
+</body>
+</html>
