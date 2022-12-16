@@ -160,10 +160,10 @@
             width: 90%;
             border-radius: 8px;
             height: 110%;
-            -webkit-box-shadow:  rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
-        
+
 
         /* Properties fro left panel elements */
 
@@ -255,12 +255,13 @@
             border: 1px solid;
             border-color: #e6e9ef;
             border-radius: 8px;
-      
-            
+
+
         }
-        .answer.shown>div>button{
+
+        .answer.shown>div>button {
             padding: 20px;
-            background-color:#f65f7c;
+            background-color: #f65f7c;
             color: white;
             border-radius: 8px;
             border: none;
@@ -291,11 +292,13 @@
             font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
             margin-top: 5px;
         }
-        .answer.shown>div:nth-child(2)>div:nth-child(2)>a{
+
+        .answer.shown>div:nth-child(2)>div:nth-child(2)>a {
             text-decoration: none;
             font-weight: 500;
-            color:#1f76c2
+            color: #1f76c2
         }
+
         .answer.shown>div:nth-child(2)>div:nth-child(1)>h4 {
             margin: 0px;
             padding: 0px;
@@ -306,6 +309,7 @@
             margin-top: 5px;
             padding-left: 10px;
         }
+
         /* Properties fro left panel elements ends here */
 
         #right_panel {
@@ -414,6 +418,113 @@
             outline: none;
             padding: 6px;
         }
+
+        #inviteMem {
+            position: fixed;
+            z-index: 1;
+            left: 0%;
+            top: 0%;
+            display: none;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            padding: 0px;
+            box-shadow: rgb(0 0 0) 0px 6px 20px 0px;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #inviteMem>div {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 320px;
+            margin: auto;
+            background-color: #fff;
+            margin-top: 150px;
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 8px;
+            padding: 40px;
+
+        }
+
+        #inviteMem>div>div {
+            margin: 10px 0px;
+        }
+
+        /*next one is Invite Members  */
+        #inviteMem>div>div:nth-child(1) {
+            font-size: 22px;
+            font-weight: 300;
+            color: #323338;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            line-height: 1.1;
+            box-sizing: border-box;
+            vertical-align: baseline;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(1) {
+            font-size: 16px;
+            color: #323338;
+            display: flex;
+            align-items: center;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(1)>svg {
+            margin-right: 5px;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(2)>input {
+            width: 94%;
+            height: 40px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #323338;
+            border: 1px solid;
+            border-radius: 3px;
+            border-color: #c3c6d4;
+            padding: 2px 0px 3px 6px;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(2)>input::placeholder {
+            font-size: 16px;
+            font-weight: 100;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div {
+            margin: 10px 0px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #323338;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(3) {
+            display: flex;
+            margin: 10px 0px;
+        }
+
+        #inviteMem>div>div:nth-child(3) {
+            height: 100px;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: right;
+        }
+
+        #inviteMem>div>div:nth-child(3)>div>button {
+            border: none;
+            background-color: #0060B9;
+            color: white;
+            padding: 8px 19px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -499,7 +610,7 @@
             <div></div>
             <div>
                 <div>
-                    <div class="ab">
+                    <div class="ab" id="inviteBtn">
                         <svg viewBox="0 0 20 20" fill="currentColor" width="23" height="23" aria-hidden="true"
                             class="icon_component surface-item-icon icon_component--no-focus-style">
                             <path
@@ -519,6 +630,43 @@
                                 d="M8.65191 2.37299C6.9706 2.37299 5.35814 3.04089 4.16927 4.22976C2.9804 5.41863 2.3125 7.03108 2.3125 8.7124C2.3125 10.3937 2.9804 12.0062 4.16927 13.195C5.35814 14.3839 6.9706 15.0518 8.65191 15.0518C10.0813 15.0518 11.4609 14.5691 12.5728 13.6939L16.4086 17.5303C16.7014 17.8232 17.1763 17.8232 17.4692 17.5303C17.7621 17.2375 17.7622 16.7626 17.4693 16.4697L13.6334 12.6333C14.5086 11.5214 14.9913 10.1418 14.9913 8.7124C14.9913 7.03108 14.3234 5.41863 13.1346 4.22976C11.9457 3.04089 10.3332 2.37299 8.65191 2.37299ZM12.091 12.1172C12.9878 11.2113 13.4913 9.98783 13.4913 8.7124C13.4913 7.42891 12.9815 6.19798 12.0739 5.29042C11.1663 4.38285 9.9354 3.87299 8.65191 3.87299C7.36842 3.87299 6.1375 4.38285 5.22993 5.29042C4.32237 6.19798 3.8125 7.42891 3.8125 8.7124C3.8125 9.99589 4.32237 11.2268 5.22993 12.1344C6.1375 13.0419 7.36842 13.5518 8.65191 13.5518C9.92736 13.5518 11.1509 13.0483 12.0568 12.1514C12.0623 12.1455 12.0679 12.1397 12.0737 12.134C12.0794 12.1283 12.0851 12.1227 12.091 12.1172Z"
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
+                    </div>
+
+                    <div id="inviteMem">
+                        <div>
+                            <div>
+                                <h2>Invite to Moday Work OS</h2>
+                            </div>
+                            <div>
+                                <div><svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"
+                                        aria-hidden="true" class="icon_component email-icon">
+                                        <path
+                                            d="M3 4.25C2.58579 4.25 2.25 4.58579 2.25 5V15C2.25 15.4142 2.58579 15.75 3 15.75H17C17.4142 15.75 17.75 15.4142 17.75 15V5C17.75 4.58579 17.4142 4.25 17 4.25H3ZM3.75 6.71589V14.25H16.25V6.71591L11.802 10.1371C11.2854 10.5346 10.6518 10.75 10 10.75C9.3482 10.75 8.71468 10.5346 8.19805 10.1371L3.75 6.71589ZM15.0455 5.75H4.95456L9.1126 8.94818L9.11265 8.94821C9.36706 9.14393 9.67903 9.25004 10 9.25004C10.321 9.25004 10.633 9.14393 10.8874 8.94821L10.8874 8.94818L15.0455 5.75Z"
+                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                    </svg>Invite with email</div>
+
+                                <div>
+                                    <input type="text" placeholder="Enter one or more Email addresses">
+                                </div>
+                                <div id="radios">
+                                    <div>
+                                        <input name="users" type="radio">
+                                        <span>Member</span>
+                                    </div>
+                                    <div>
+                                        <input name="users" type="radio">
+                                        <span>Viewer (Read only)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <div>
+                                    <button>Invite</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -598,13 +746,14 @@
                                     </div>
                                     <div>
                                         <div>
-                                        <svg viewBox="0 0 20 20" fill="currentColor" width="30"
-                                                        height="30" aria-hidden="true" aria-label="Public board">
-                                                        <path
-                                                            d="M7.5 4.5H16C16.2761 4.5 16.5 4.72386 16.5 5V15C16.5 15.2761 16.2761 15.5 16 15.5H7.5L7.5 4.5ZM6 4.5H4C3.72386 4.5 3.5 4.72386 3.5 5V15C3.5 15.2761 3.72386 15.5 4 15.5H6L6 4.5ZM2 5C2 3.89543 2.89543 3 4 3H16C17.1046 3 18 3.89543 18 5V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V5Z"
-                                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                                                        </path>
-                                                    </svg></div>
+                                            <svg viewBox="0 0 20 20" fill="currentColor" width="30" height="30"
+                                                aria-hidden="true" aria-label="Public board">
+                                                <path
+                                                    d="M7.5 4.5H16C16.2761 4.5 16.5 4.72386 16.5 5V15C16.5 15.2761 16.2761 15.5 16 15.5H7.5L7.5 4.5ZM6 4.5H4C3.72386 4.5 3.5 4.72386 3.5 5V15C3.5 15.2761 3.72386 15.5 4 15.5H6L6 4.5ZM2 5C2 3.89543 2.89543 3 4 3H16C17.1046 3 18 3.89543 18 5V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V5Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                                </path>
+                                            </svg>
+                                        </div>
                                         <div>Your first board</div>
                                     </div>
 
@@ -635,41 +784,45 @@
                                         <img width="25%" src="images\damann.jpg" alt="">
                                     </div>
                                     <div>
-                                        <div><h4>Hi</h4></div>
+                                        <div>
+                                            <h4>Hi</h4>
+                                        </div>
                                         <div><a href="">@ Shubham Yadav,</a></div>
-                                </div>
-
-                            </div>
-                            <!-- My Workspace -->
-                            <div class="main-item">
-
-                                <div class="question">
-                                    <div>
-                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
-                                            height="24" role="button" tabindex="0" aria-hidden="false"
-                                            class="icon_component collapsible-icon icon_component--clickable">
-                                            <path
-                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
-                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-
-                                    <div>
-                                        <h1>My workspace</h1>
                                     </div>
 
                                 </div>
-                                <div class="answer">
-                                    <div>
-                                        <button>M</button>
-                                    </div>
-                                    <div>
-                                        <div><h4 style="font-weight: 400;">(--)</h4></div>
-                                        <div style="font-weight: 400;">My workspace</div>
-                                </div>
-                                </div>
+                                <!-- My Workspace -->
+                                <div class="main-item">
 
-                            </div>
+                                    <div class="question">
+                                        <div>
+                                            <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
+                                                height="24" role="button" tabindex="0" aria-hidden="false"
+                                                class="icon_component collapsible-icon icon_component--clickable">
+                                                <path
+                                                    d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
+                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+
+                                        <div>
+                                            <h1>My workspace</h1>
+                                        </div>
+
+                                    </div>
+                                    <div class="answer">
+                                        <div>
+                                            <button>M</button>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <h4 style="font-weight: 400;">(--)</h4>
+                                            </div>
+                                            <div style="font-weight: 400;">My workspace</div>
+                                        </div>
+                                    </div>
+
+                                </div>
 
                         </section>
                     </section>
@@ -759,6 +912,7 @@
             arrow.classList.toggle("rotate");
         });
     });
+
  // Add member by sachin (start)
     let flag=false
 //  let addmember=document.querySelector("#addmember")
@@ -904,3 +1058,27 @@ body.append(navbarDiv)
 // Add member by sachin (end)
 
 </script>
+=======
+
+
+//for invite functionality
+
+var modal = document.getElementById("inviteMem");
+
+var btn = document.getElementById("inviteBtn");
+
+btn.onclick = function() {
+  modal.style.display = "block";
+  btn.style.backgroundColor= "grey";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    btn.style.backgroundColor= ""
+  }
+}
+
+
+</script>
+
