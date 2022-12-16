@@ -104,8 +104,7 @@ let dataOfall_five_Img=document.querySelector("#dataOfall_five_Img")
                data.forEach((e)=>{
                 let div=document.createElement("div")
                 div.setAttribute("class","each_Div_Of_fiveImg")
-                // div.style.backgroundColor="rgb(236, 249, 254)"
-                div.style.height="auto"
+              
                 div.addEventListener("click",function(){
                     localStorage.setItem("Imagedata",JSON.stringify(e))
                     showDataOfFiveimg()
