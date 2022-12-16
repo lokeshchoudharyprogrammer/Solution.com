@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
@@ -913,6 +914,153 @@
         });
     });
 
+ // Add member by sachin (start)
+    let flag=false
+//  let addmember=document.querySelector("#addmember")
+//  addmember.addEventListener("click",function(){
+//    if(flag==true){
+//     return
+//    }
+//    createAddmemberFun()
+//  })
+
+
+let addmemberBigDiv=null
+  function createAddmemberFun(){
+    let Bigdiv=document.createElement("div")
+  Bigdiv.setAttribute("id","divOf_addmember")
+  addmemberBigDiv= Bigdiv
+  let crossDiv =document.createElement("div")
+  crossDiv .innerText="X"
+  crossDiv.addEventListener("click",function(){
+    Bigdiv.remove()
+    flag=false
+  })
+  let heading=document.createElement("h1")
+  heading.innerText="Invite to solution Work OS"
+  let p=document.createElement("p")
+  p.innerText="Invite with email"
+  let mailBox=document.createElement("input")
+  mailBox.type="email"
+  mailBox.placeholder="Enter te email address of you team member"
+  let breakLine1=document.createElement("br")
+  let breakLine2=document.createElement("br")
+  let breakLine3=document.createElement("br")
+  let breakLine4=document.createElement("br")
+
+let select=document.createElement("select")
+let option0=document.createElement("option")
+option0.innerText="Select You Choice"
+option0.value=""
+let option1=document.createElement("option")
+option1.innerText="Member"
+option1.value="member"
+let option2=document.createElement("option")
+option2.innerText="viewer (Read only)"
+option2.value="viwer "
+select.append(option0,option1,option2)
+ let button=document.createElement("button")
+ button.innerText="Invite"
+ button.addEventListener("click",function(){
+    flag=false
+    collectMemberEmail(mailBox.value,select.value)
+    Bigdiv.remove()
+ })
+ flag=true
+  Bigdiv.append(crossDiv,heading,p,mailBox,breakLine1,breakLine2,select,breakLine3,breakLine4, button)
+  body.append( Bigdiv)
+
+  }
+
+
+function  collectMemberEmail(email,status){
+  let data=JSON.parse(localStorage.getItem("addMemberIn-work"))||[]
+  let obj={
+    email:email,
+    status:status,
+  }
+
+  if(obj.email!="" &&obj.status!=""){
+    console.log(obj)
+data.push(obj)
+localStorage.setItem("addMemberIn-work",JSON.stringify(data))
+  }else{
+    alert("Please fill data")
+  }
+
+}
+
+
+
+
+let notification=document.querySelector("#notificationBar")
+notification.addEventListener("click",function(){
+    if(addmemberBigDiv!=null){
+    
+        addmemberBigDiv.remove()
+    }
+  
+    createNotificatioPanel()
+    
+})
+  
+    
+function createNotificatioPanel(){
+   
+    let navbarDiv=document.createElement("div")
+    navbarDiv.setAttribute("id","mySidenav")
+    navbarDiv.setAttribute("class","sidenav")
+    navbarDiv.style.width = "550px";
+    let cross=document.createElement('div')
+    cross.innerText="X"
+    cross.addEventListener("click",function(){
+        navbarDiv.remove()
+        // document.getElementById("mySidenav").style.width = "0";
+    })
+    let head=document.createElement("h1")
+    head.innerText="Notification"
+    let headOfDiv=document.createElement("div")
+    headOfDiv.setAttribute("id","allFourHead")
+   
+    headOfDiv.style.justifyContent=" space-around"
+    let div1=document.createElement("div")
+    div1.innerText="All"
+    let div2=document.createElement("div")
+    div2.innerText="Unread"
+    let div3=document.createElement("div")
+    div3.innerText="I was Mentioned"
+    let div4=document.createElement("div")
+     div4.innerText="Assigned to me "
+    headOfDiv.append(div1,div2,div3,div4)
+    let hor=document.createElement("hr")
+    hor.style.border="1px solid grey"
+    let image=document.createElement("img")
+    image.src="https://cdn.monday.com/images/notifications-first.svg"
+   
+    let p=document.createElement("p")
+    p.innerText="Here's where you'll get notified in real-time every time someone @mentions you or replies to one of your items"
+
+  let button=document.createElement("button")
+  button.innerText="Invite New Member"
+  button.addEventListener("click",function(){
+   
+    document.getElementById("mySidenav").style.width = "0px";
+    flag=false
+    createAddmemberFun()
+    navbarDiv.remove()
+  })
+  navbarDiv.append(cross,head,headOfDiv,hor,image,p,button)
+body.append(navbarDiv)
+  
+// document.getElementById("mySidenav").style.width = "250px";
+}
+
+
+// Add member by sachin (end)
+
+</script>
+=======
+
 
 //for invite functionality
 
@@ -934,3 +1082,4 @@ window.onclick = function(event) {
 
 
 </script>
+
