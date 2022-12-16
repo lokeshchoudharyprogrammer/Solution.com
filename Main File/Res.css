@@ -1,0 +1,209 @@
+/* @media (min-width: 320px) and (max-width: 480px) { */
+    @media screen and (min-width: 100px) and (max-width: 600px){
+    /* … */
+    .GridImg {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 21px;
+        gap: 70px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .divofcontent {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .Maindivofdivs {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        text-align: center;
+        padding-top: 12px;
+        gap: 3px;
+        row-gap: 3px;
+        margin-left: 21px;
+    }
+
+    .Maindivofdivs img {
+        margin-top: 11px;
+
+        width: 27px;
+    }
+
+
+    .Maindivofdivs h4 {
+        text-align: center;
+    }
+
+    
+
+
+
+}
+
+
+@media screen and (max-width:1100px) and (max-width:900px) {
+
+
+    .getbtnunder {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blue-bg {
+        background: url("https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/first_fold/image.png");
+        background-repeat: repeat;
+        background-size: auto;
+        background-size: 413px;
+        background-repeat: no-repeat;
+    }
+
+    .white-bg {
+        position: relative;
+        top: -10;
+        background-color: #fff;
+        min-height: 100px;
+        margin: 00px 0px;
+        margin-top: 0px;
+        width: 100%;
+        height: 130px;
+        margin-top: -377px;
+        transform: skewY(4deg);
+        z-index: -1;
+    }
+
+    .GridImg img {
+        max-width: 69%;
+    }
+
+    .itemofgrid {
+        margin-top: 12px;
+        margin-top: 64px;
+        display: none;
+        margin: 12px;
+        padding: 1px;
+        /* grid-template-areas:
+  "item6 item6 item6 item6  " 
+  "item6 item6 item6 item6 " 
+  "item6 item6 item6 item6" 
+  "item6 item6 item6 item6 "; */
+    }
+
+    .itemofgrid9 img {
+        width: 0%;
+        float: right;
+        margin-top: -160px;
+        margin-left: -20px;
+    }
+
+    .white-bg2 {
+        top: 10;
+        padding-top: 1px;
+        margin-top: 600px;
+        background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%);
+        min-height: 100px;
+        margin: 00px 0px;
+        margin-top: 0px;
+        width: 100%;
+        height: -32px;
+        margin-top: -59px;
+        transform: skewY(12deg);
+        z-index: -1;
+        display: none;
+    }
+
+    .white-bg3 {
+        top: 10;
+        padding-top: 1px;
+        margin-top: 600px;
+        background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%);
+        min-height: 100px;
+        margin: 00px 0px;
+        margin-top: 0px;
+        width: 100%;
+        height: -32px;
+        margin-top: -59px;
+        transform: skewY(12deg);
+        z-index: -1;
+        display: none;
+    }
+
+    #last {
+        display: flex;
+        /* width: 10px; */
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .newscroll {
+        scrollbar-color: rgb(1, 2, 67) rgb(15, 16, 72);
+        /* scrollbar-color: rgb(142, 39, 183) rgb(0, 23, 84); */
+        width: 425px;
+        height: 800px;
+        color: aliceblue;
+        overflow-y: auto;
+        justify-content: space-between;
+    }
+
+    .displayclass {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .displayclass img {
+        margin-right: 2px;
+        width: 120px;
+    }
+
+    .gtbtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 32px;
+        margin-left: 130px;
+        border: none;
+        color: aliceblue;
+        background-color: #6161FF;
+        font-size: 20px;
+    }
+
+    .topmax {
+        margin-top: 73px;
+        border-radius: 21px;
+    }
+
+    .topmax {
+        width: 404px;
+        margin-top: 73px;
+        border-radius: 21px;
+        margin-left: 9px;
+        height: 292px;
+        margin-bottom: 23px;
+    }
+
+    #lastOfpaeg {
+        display: flex;
+        background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%);
+        margin-top: -31px;
+        color: rgb(255, 255, 255);
+        border-radius: 12px;
+    }
+
+}
+
+/* @media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+} */
