@@ -195,39 +195,6 @@
     margin-top: 10vh;
 }
 
-@media screen and (max-width:1100px) and (max-width:900px) {
-    .triangle-right_1 {
-        width: 0;
-        height: 0;
-        border-top: 180px solid transparent;
-        border-left: 1250px solid rgb(236, 236, 254);
-        border-bottom: 0px solid transparent;
-    }
-
-    .triangle-right_2 {
-        width: 0;
-        height: 0;
-        border-top: 180px solid transparent;
-        border-left: 1650px solid rgb(26, 14, 97);
-        border-bottom: 0px solid transparent;
-    }
-
-    .triangle-left {
-        width: 0;
-        height: 0;
-        border-top: 0px solid transparent;
-        border-right: 1250px solid rgb(26, 14, 97);
-        border-bottom: 180px solid transparent;
-    }
-}
-
-@media screen and (max-width:1100px) and (max-width:900px) {
-    #five-imageWith-data {
-
-        width: 100%;
-
-    }
-}
 
 /* mid 2 sachin  */
 
@@ -263,7 +230,9 @@
 }
 
 .Maindivofdivs {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    margin-left: 12px;
     justify-content: space-around;
 }
 
@@ -272,46 +241,86 @@
 }
 
 .border1 {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
+
+
+
 .border2 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
 .border3 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
 .border4 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
 .border5 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
 .border6 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
 .border7 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
 .border8 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
 
 .border9 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    width: 120px;
     border: 1px solid;
     border-radius: 9px;
 }
@@ -457,6 +466,57 @@
 
 }
 
+/* @media (min-width: 320px) and (max-width: 480px) {
+
+
+    .GridImg {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 21px;
+        gap: 70px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .divofcontent {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .Maindivofdivs {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        text-align: center;
+        padding-top: 12px;
+        gap: 3px;
+        row-gap: 3px;
+        margin-left: 21px;
+    }
+
+    .Maindivofdivs img {
+        margin-top: 11px;
+
+        width: 27px;
+    }
+
+
+    .Maindivofdivs h4 {
+        text-align: center;
+    }
+
+    .border1 {}
+
+
+
+} */
+
+
+/* @media (min-width: 320px) and (max-width: 480px) {
+
+    
+    
+} */
 .GridImg img {
 
     max-width: 54%;
@@ -633,6 +693,7 @@
 }
 
 #lastOfpaeg {
+    /* display: flex; */
 
     background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%);
     margin-top: -31px;
