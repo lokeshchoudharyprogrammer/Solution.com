@@ -79,7 +79,7 @@
 }
 #allfiveImg {
   width: 35%;
-  height: auto;
+  height: 50vw;
 }
 
 .each_Div_Of_fiveImg {
@@ -99,8 +99,11 @@
 .fiveImgButton {
   padding: 2% 5%;
   border-radius: 25px;
-  border: 0.5px solid grey;
-  background-color: white;
+  margin: 10%;
+  border: 0.5px solid rgb(149, 149, 153);
+  color: white;
+  background-color: #6060f8;
+
 }
 .slideShowMainDiv {
   width: 90%;
@@ -260,6 +263,16 @@
     top: 33%;
     box-shadow: rgb(159, 159, 255) 0px 22px 70px 4px;
   }
+  #allfiveImg {
+    width: 35%;
+    height: 60vw;
+  }
+  
+  .each_Div_Of_fiveImg {
+    background-color: rgb(236, 249, 254);
+    border-radius: 10px 0px 0px 0px 10;
+    height: 20%;
+  }
   #Fiveimage_inCircle {
     padding-top: 18%;
   }
@@ -290,6 +303,7 @@
   #fouCard_mainDiv > div > div > p {
     font-size: 20px;
   }
+
 }
 @media screen and (min-width: 600px) and (max-width: 899px) {
   #five-imageWith-data {
@@ -357,6 +371,16 @@
     background-color: #deefff;
     box-shadow: rgba(160, 197, 243, 0.35) 0px 5px 15px;
   }
+  #allfiveImg {
+    width: 35%;
+    height:70vw;
+  }
+  
+  .each_Div_Of_fiveImg {
+    background-color: rgb(236, 249, 254);
+    border-radius: 10px 0px 0px 0px 10;
+    height: 20%;
+  }
   #fouCard_mainDiv > div {
     display: block;
     padding: 0%;
@@ -393,6 +417,16 @@
     width: 100%;
     border: 1px solid rgb(255, 255, 255);
     margin: auto;
+  }
+  #allfiveImg {
+    width: 35%;
+    height:90vw;
+  }
+  
+  .each_Div_Of_fiveImg {
+    background-color: rgb(236, 249, 254);
+    border-radius: 10px 0px 0px 0px 10;
+    height: 20%;
   }
   #slideShow_img_div {
     height: 30%;
@@ -471,6 +505,7 @@
     text-align: center;
   }
 
+
   #slideShow_data {
     width: 85%;
     padding-bottom: 20%;
@@ -536,9 +571,11 @@
   }
   #allfiveImg {
     width: 50%;
-    height: auto;
+    height:220vw;
   }
-
+  #allfiveImg>div{
+    height: 20%;
+  }
   #dataOfall_five_Img {
     width: 50%;
 
@@ -714,7 +751,7 @@
 }
 
 .blue-bg {
-  position: relative;
+  /* position: relative;
   background: url("https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/first_fold/image.png");
   background-size: cover;
   background-color: #58aff6;
@@ -723,7 +760,7 @@
   width: 100%;
   z-index: -4;
   overflow-x: hidden;
-}
+} */
 
 .white-bg {
   position: relative;
