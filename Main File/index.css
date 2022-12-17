@@ -577,7 +577,8 @@
 }
 
 .Maindivofdivs {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(9,1fr);
   justify-content: space-around;
 }
 
@@ -598,6 +599,7 @@
 .border3 {
   border: 1px solid;
   border-radius: 9px;
+  height: 167px;
 }
 
 .border4 {
@@ -608,6 +610,7 @@
 .border5 {
   border: 1px solid;
   border-radius: 9px;
+  height: 167px;
 }
 
 .border6 {
@@ -616,16 +619,20 @@
 }
 
 .border7 {
+    height: 167px;
   border: 1px solid;
   border-radius: 9px;
 }
 
 .border8 {
+    height: 167px;
   border: 1px solid;
   border-radius: 9px;
 }
 
 .border9 {
+  display: flex;
+  width: 120px;
   border: 1px solid;
   border-radius: 9px;
 }
@@ -791,11 +798,13 @@
 }
 
 .itemofgrid9 img {
-  width: 44%;
+    width: 26%;
   float: right;
-  margin-top: -260px;
-  margin-left: -20px;
+  margin-top: -272px;
+  margin-right: 81px;
+  height: 231px;
 }
+
 
 .itemofgrid8 div {
   border: 1px solid black;
@@ -909,23 +918,24 @@
 }
 
 #lastOfpaeg {
-  background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%);
-  margin-top: -31px;
-  color: rgb(255, 255, 255);
+    display: flow-root;
 }
 #last {
-  display: flex;
-  justify-content: space-around;
+    color: rgb(255, 255, 255);
+    margin-top: -31px;
+    background: linear-gradient(rgb(1, 2, 67) 0%, rgb(15, 16, 72) 100%);
+    display: flex;
+    justify-content: space-around;
 }
 
 .newscroll {
   scrollbar-color: rgb(1, 2, 67) rgb(15, 16, 72);
-  /* scrollbar-color: rgb(142, 39, 183) rgb(0, 23, 84); */
+ 
   width: 600px;
   height: 800px;
   color: aliceblue;
-  /* overflow: scroll; */
-  overflow-y: auto;
+  overflow: scroll;
+  /* overflow-y: auto; */
 
   justify-content: space-between;
 }
