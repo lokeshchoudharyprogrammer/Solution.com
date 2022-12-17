@@ -561,7 +561,7 @@
 
                 </div>
                 <div>
-                    <div class="ab">
+                    <div class="ab" id="notificationBar">
                         <svg viewBox="0 0 20 20" fill="currentColor" width="23" height="23" aria-hidden="true"
                             class="icon_component surface-item-icon icon_component--no-focus-style">
                             <path
@@ -886,6 +886,7 @@
 
 
 <script>
+    let body=document.querySelector("body")
     let menu_item = document.querySelector(".ab");
     menu_item.addEventListener("mouseover", function () {
         menu_item.style.backgroundColor = "#333333";
@@ -981,9 +982,22 @@ function  collectMemberEmail(email,status){
   }
 
   if(obj.email!="" &&obj.status!=""){
-    console.log(obj)
-data.push(obj)
-localStorage.setItem("addMemberIn-work",JSON.stringify(data))
+    let flag=true
+    data.push(obj)
+    data.forEach((e)=>{
+        if(e.email==obj.email){
+            flag=false
+        }
+    })
+   
+    if(flag==true){
+        localStorage.setItem("addMemberIn-work",JSON.stringify(data))
+    }else{
+    alert("This user is already Added")
+    }
+
+
+
   }else{
     alert("Please fill data")
   }
@@ -1056,10 +1070,27 @@ body.append(navbarDiv)
 }
 
 
+let mainDiv2=document.querySelector("#main2")
+
+let Personlogo=document.querySelector("#person")
+Personlogo.addEventListener('click',function(){
+   createPrfileSmallDiv()
+})
+
+
+function createPrfileSmallDiv(){
+   let div=document.createElement("div")
+   div.setAttribute("id","divOf_addmember")
+   div.addEventListener("click",function(){
+   window.location.href="team.html"
+   })
+   body.append(div)
+}
+
 // Add member by sachin (end)
 
-</script>
-=======
+
+
 
 
 //for invite functionality
