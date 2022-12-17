@@ -1,5 +1,6 @@
 
 const work_btn=document.getElementById("work")
+
 work_btn.addEventListener("click",(event)=>{
     event.preventDefault();
 
@@ -14,35 +15,43 @@ const click_school=document.getElementById("renderschool")||[]
 
 
 function workfunction(event){
+ work_btn.style.backgroundColor="blue"
+ personal_btn.style.backgroundColor=null;
+
+ nonprofit_btn.style.backgroundColor=null;
+School_btn.style.backgroundColor=null;
+
     personal_click.innerHTML=null
     click_nonprofit.innerHTML=null
     click_school.innerHTML=null
+    
+  document.getElementById("work").style.backgroundcolor = "blue";
     click_work.innerHTML=`
    
 <form  action="">
 <div> <h1>What best describes your <span>current role?<span></h1></div>
       <div>
     <div class="work_slide">
-        <input type="radio" placeholder="#"  id="Business-Owner"><label>Business Owner</label>
+      <div  id="Business-Owner" Onclick="Business()"><input type="radio" placeholder="#" ></div><label>Business Owner</label>
 
     </div>
     <div class="work_slide">
-        <input type="radio" placeholder="#" id="Team-Leader" ><lebal>Team Leader</lebal>
+    <div   id="Team-Leader"> <input type="radio" placeholder="#" ></div><lebal>Team Leader</lebal>
     </div>
     <div  class="work_slide">
-        <input type="radio" placeholder="#" id="Team-Member" ><lebal>Team Member</label>
+    <div  id="Team-Member"><input type="radio" placeholder="#"  ></div><lebal>Team Member</label>
     </div>
     <div class="work_slide">
-        <input type="radio" placeholder="#" id="Freelancer" ><label>Freelancer</lebal>
+    <div  id="Freelancer"> <input type="radio" placeholder="#"  ></div><label>Freelancer</lebal>
     </div> 
     <div class="work_slide">
-    <input type="radio" placeholder="#" id="Director" ><label>Director</lebal>
+    <div  id="Director" ><input type="radio" placeholder="#" ></div><label>Director</lebal>
 </div>
 <div class="work_slide">
-<input type="radio" placeholder="#" id="C-Level" ><label>C-Level</lebal>
+<div  id="C-Level"><input type="radio" placeholder="#"  ></div><label>C-Level</lebal>
 </div>
 <div class="work_slide">
-<input type="radio" placeholder="#" id="VP" ><label>VP</lebal>
+<div id="VP"><input type="radio" placeholder="#"  ></div><label>VP</lebal>
 </div>
     </div>
     </form>
@@ -57,7 +66,13 @@ personalfunction();})
 
 
 function personalfunction(){
+    personal_btn.style.backgroundColor="blue"
+
+    nonprofit_btn.style.backgroundColor=null;
+   School_btn.style.backgroundColor=null;
+    work_btn.style.backgroundColor=null;
    
+
     click_nonprofit.innerHTML=null
     click_school.innerHTML=null
     click_work.innerHTML=null
@@ -71,6 +86,12 @@ Schoolfunction()});
 
 
 function Schoolfunction(event){
+    School_btn.style.backgroundColor="blue"
+
+    nonprofit_btn.style.backgroundColor=null;
+   personal_btn.style.backgroundColor=null;
+    work_btn.style.backgroundColor=null;
+   
     click_work.innerHTML=null
     click_nonprofit.innerHTML=null
     click_school.innerHTML=null
@@ -81,17 +102,17 @@ click_school.innerHTML=`
 <h1>What best describes your <span>current role?<span></h1></div>
 <div>
 <div class="work_slide">
-<input type="radio"   id="Undergraduate"><label>Undergraduate Student</label>
+<div id="Undergraduate"><input type="radio"></div><label>Undergraduate Student</label>
 
 </div>
 <div class="work_slide">
-<input type="radio" id="Graduate " ><lebal>Graduate Student</lebal>
+<div id="Graduate "><input type="radio"  ></div><lebal>Graduate Student</lebal>
 </div>
 <div  class="work_slide">
-<input type="radio" id="Faculty Member" ><lebal>Faculty Member</label>
+<div id="Faculty Member"><input type="radio"  ></div><lebal>Faculty Member</label>
 </div>
 <div class="work_slide">
-<input type="radio" id="Other" ><label>Other</lebal>
+<div id="Other"><input type="radio"  ></div><label>Other</lebal>
 </div>
 </div>
 </form>
@@ -107,6 +128,13 @@ nonprofitfunction()});
 
 
 function nonprofitfunction(event){
+
+    nonprofit_btn.style.backgroundColor="blue"
+
+    School_btn.style.backgroundColor=null;
+   personal_btn.style.backgroundColor=null;
+    work_btn.style.backgroundColor=null;
+
     click_work.innerHTML=null
     click_school.innerHTML=null
     personal_click.innerHTML=null
@@ -117,26 +145,25 @@ click_nonprofit.innerHTML=`
 <h1>What best describes your <span>current role?<span></h1></div>
 <div>
 <div class="work_slide">
-<input type="radio" placeholder="#"  id="Board member"><label>Board member</label>
+<div id="Board member"><input type="radio" placeholder="#"  ><label>Board member</label>
 
 </div>
 <div class="work_slide">
-<input type="radio" placeholder="#" id="Executive" ><lebal>Executive</lebal>
+<div id="Executive"><input type="radio" placeholder="#" ></div><lebal>Executive</lebal>
 </div>
 <div  class="work_slide">
-<input type="radio" placeholder="#" id="Employee" ><lebal>Employee</label>
+<div id="Employee"><input type="radio" placeholder="#" ></div><lebal>Employee</label>
 </div>
 <div class="work_slide">
-<input type="radio" placeholder="#" id="Volunteer" ><label>Volunteer</lebal>
+<div id="Volunteer"><input type="radio" placeholder="#"  ></div><label>Volunteer</lebal>
 </div>
 <div class="work_slide">
-<input type="radio" placeholder="#" id="IT Staff" ><label>IT Staff</lebal>
+<div id="IT Staff"><input type="radio" placeholder="#"  ></div><label>IT Staff</lebal>
 </div>
 <div class="work_slide">
-<input type="radio" placeholder="#" id="other" ><label>Other</lebal>
+<div  id="other"><input type="radio" placeholder="#" ></div><label>Other</lebal>
 </div>
 </div>
 </form>
 `
 }
-
