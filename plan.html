@@ -5,12 +5,229 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Work Panel</title>
     <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            color: #323338;
+            font-size: 14px;
+        }
+        #mainAll{
+            width: 100%;
+            height: 100vh;
+            margin: auto;
+            display: flex;
+        }
+
+        #container {
+            width: 90%;
+            margin: 0px auto;
+            height: auto;
+            border: 1px solid #c3c6d4;
+            padding: 30px;
+        }
+
+        #main {
+            display: flex;
+
+        }
+        #main>div:nth-child(2) {
+            width: 75%;
+            padding: 0px 20px;
+        }
+
+        #main>div:nth-child(1) {
+            width: 25%;
+            border-right: 1px solid #c3c6d4;
+        }
+
+        
+
+        #title {
+            text-align: left;
+            border-bottom: 1px solid #c3c6d4;
+
+        }
+
+        #select1 {
+            margin: auto;
+            width: 60%;
+            height: 40px;
+            border: 1px solid #c3c6d4;
+            font-size: 14px;
+        }
+
+        #search>h5 {
+            font-size: 14px;
+        }
+
+        table {
+            font-size: 14px;
+            width: 100%;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            border-collapse: collapse;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        thead tr {
+            background-color: #ffffff;
+            border: 1px solid #c3c6d4;
+            border-radius: 4px;
+        }
+
+        th {
+            font-size: 14px;
+        }
+
+        td {
+            font-size: 13px;
+            border: 1px solid #c3c6d4;
+            border-radius: 4px;
+        }
+
+        th,
+        td {
+            padding: 8px 5px;
+            border-radius: 4px;
+        }
+
+        tr {
+            border-bottom: 1px solid #c3c6d4;
+        }
+
+        th {
+            border: 1px solid #c3c6d4;
+        }
+
+        #collectData {
+            position: fixed;
+            z-index: 1;
+            left: 0%;
+            top: 0%;
+            display: none;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            padding: 0px;
+            box-shadow: rgb(0 0 0) 0px 6px 20px 0px;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+        #collectData>div{
+            background-color: #ffffff;
+            width: 500px;
+            margin: auto;
+            background-color: #fff;
+            margin-top: 60px;
+            border: 2px solid #c3c6d4;
+            border-radius: 8px;
+            padding: 20px 0px 0px 20px;
+        }
+
+        #collectData>div>form {
+            width: 100%;
+            height: 500px;
+            font-size: 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            
+        }
+
+        #collectData>div>form>input {
+            width: 92%;
+            height: 20px;
+            padding: 10px;
+            margin: 4px 0px 10px 0px;
+            border-radius: 4px;
+            border: 1px solid #c3c6d4;
+        }
+
+        #collectData>div>form>input:nth-last-child(1) {
+            width: 97%;
+            height: 40px;
+            background-color: #ffffff;
+            border: 1px solid #c3c6d4;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            height: 38px;
+        }
+
+        #collectData>div>form>select {
+            width: 97%;
+            height: 43px;
+            padding: 10px;
+            margin: 10px 0px 5px 0px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #c3c6d4;
+        }
+        #query{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .addNewTask{
+            padding-bottom: 30px;
+            border-bottom: 1px solid #c3c6d4;
+            font-size: 18px;
+        }
+        .addNewTask>button{
+            padding: 11px 30px;
+            font-size: 16px;
+            color: #fff;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            background-color: #0073EA;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .addNewTask>button>a{
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+
+        }
+    </style>
 </head>
 
 <body>
-    <div id="dashboard">
+    <div id="collectData">
+        <div>
+            <form id="formData">
+                <label for="">Person Name</label><br />
+                <input id="name" type="text" placeholder="Enter Person Name" /><br />
+                <label for="">Person ID</label><br />
+                <input id="personId" type="number" placeholder="Enter Person ID" /><br />
+                <label for="">Task</label><br />
+                <input id="Task" type="text" placeholder="Enter the Task" /><br />
+                <br />
+                <label for="">Remark</label><br />
+                <input id="remark" type="text" placeholder="Enter the remark" /><br />
+                <label for="">Email Address </label><br />
+                <input type="text" id="email" placeholder="Enter Email Address" /><br />
+                <select id="status">
+                    <option value="">Select status</option>
+                    <option value="Working on it">Working on it</option>
+                    <option value="Stuck">Stuck</option>
+                    <option value="Done">Done</option>
+                </select><br />
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+
+    <div id="mainAll">
+
         <div id="main1">
             <div>
                 <div>
@@ -38,7 +255,7 @@
                             </defs>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab" id="notificationBar">
@@ -48,7 +265,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab">
@@ -61,7 +278,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab">
@@ -71,7 +288,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab">
@@ -81,7 +298,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
             </div>
             <div></div>
@@ -106,7 +323,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                     <div id="inviteMem">
                         <div>
                             <div>
@@ -119,7 +336,7 @@
                                             d="M3 4.25C2.58579 4.25 2.25 4.58579 2.25 5V15C2.25 15.4142 2.58579 15.75 3 15.75H17C17.4142 15.75 17.75 15.4142 17.75 15V5C17.75 4.58579 17.4142 4.25 17 4.25H3ZM3.75 6.71589V14.25H16.25V6.71591L11.802 10.1371C11.2854 10.5346 10.6518 10.75 10 10.75C9.3482 10.75 8.71468 10.5346 8.19805 10.1371L3.75 6.71589ZM15.0455 5.75H4.95456L9.1126 8.94818L9.11265 8.94821C9.36706 9.14393 9.67903 9.25004 10 9.25004C10.321 9.25004 10.633 9.14393 10.8874 8.94821L10.8874 8.94818L15.0455 5.75Z"
                                             fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                                     </svg>Invite with email</div>
-
+    
                                 <div>
                                     <input type="text" placeholder="Enter one or more Email addresses">
                                 </div>
@@ -134,8 +351,8 @@
                                     </div>
                                 </div>
                             </div>
-
-
+    
+    
                             <div>
                                 <div>
                                     <button>Invite</button>
@@ -172,249 +389,218 @@
                 </div>
             </div>
         </div>
-        <div id="main2">
-            <div id="main2_child_1">
-                <div>
-                    <div>
-                        <h2 class="message1">Good evening, Shubham!</h2>
-                        <h1 class="message2">Be proud of what you've done today!</h1>
-                    </div>
-                </div>
-                <div>
-                    <img width="100%" src="images\abcd.png" alt="">
-                </div>
-                <div>
-                    <div>Give feedback</div>
-                    <div><button>Quick Search</button></div>
-                </div>
+
+        <div id="container">
+            <div id="title">
+                <h2>Shubham's Work Panel</h2><br>
             </div>
-            <div id="main2_child_2">
-                <div id="left_panel">
-                    <!-- FAQ Section -->
-                    <section class="faq-section">
-                        <!-- Recently Visited/ Inbox/ My workspace -->
-                        <section class="main-list">
-                            <!--Recently Visited-->
-                            <div class="main-item">
-
-                                <div class="question">
-                                    <div>
-                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
-                                            height="24" role="button" tabindex="0" aria-hidden="false"
-                                            class="icon_component collapsible-icon icon_component--clickable">
-                                            <path
-                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
-                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-
-                                    <div>
-                                        <h1>Recently Visited</h1>
-                                    </div>
-                                </div>
-                                <!-- <p class="answer">You can invite up to 2 additional users on the Free plan. There is no
-                                    limit on
-                                    team members for the Premium plan.</p> -->
-                                <div class="answer">
-                                    <div>
-                                        <img width="100%" src="images\quick_search_recent_board.svg" alt="">
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <svg viewBox="0 0 20 20" fill="currentColor" width="30" height="30"
-                                                aria-hidden="true" aria-label="Public board">
-                                                <path
-                                                    d="M7.5 4.5H16C16.2761 4.5 16.5 4.72386 16.5 5V15C16.5 15.2761 16.2761 15.5 16 15.5H7.5L7.5 4.5ZM6 4.5H4C3.72386 4.5 3.5 4.72386 3.5 5V15C3.5 15.2761 3.72386 15.5 4 15.5H6L6 4.5ZM2 5C2 3.89543 2.89543 3 4 3H16C17.1046 3 18 3.89543 18 5V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V5Z"
-                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div>Your first board</div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <!-- Inbox -->
-                            <div class="main-item">
-
-                                <div class="question">
-                                    <div>
-                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
-                                            height="24" role="button" tabindex="0" aria-hidden="false"
-                                            class="icon_component collapsible-icon icon_component--clickable">
-                                            <path
-                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
-                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-
-                                    <div>
-                                        <h1>Inbox</h1>
-                                    </div>
-
-                                </div>
-                                <div class="answer">
-                                    <div>
-                                        <img width="25%" src="images\damann.jpg" alt="">
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <h4>Hi</h4>
-                                        </div>
-                                        <div><a href="">@ Shubham Yadav,</a></div>
-                                    </div>
-
-                                </div>
-                                <!-- My Workspace -->
-                                <div class="main-item">
-
-                                    <div class="question">
-                                        <div>
-                                            <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
-                                                height="24" role="button" tabindex="0" aria-hidden="false"
-                                                class="icon_component collapsible-icon icon_component--clickable">
-                                                <path
-                                                    d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
-                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-
-                                        <div>
-                                            <h1>My workspace</h1>
-                                        </div>
-
-                                    </div>
-                                    <div class="answer">
-                                        <div>
-                                            <button>M</button>
-                                        </div>
-                                        <div>
-                                            <div>
-                                                <h4 style="font-weight: 400;">(--)</h4>
-                                            </div>
-                                            <div style="font-weight: 400;">My workspace</div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                        </section>
-                    </section>
-                </div>
-                <div id="right_panel">
-                    <div>
-                        <div>
-                            <img width="100%" src="images\templates-banner.png" alt="">
-                        </div>
-                        <div>
-                            <div>Boost your workflow in minutes with ready-made templates</div>
-                            <button>Explore templates</button>
-                        </div>
+            <div id="main">
+                <div id="query">
+                    <div class="addNewTask">
+                        <h5>Add new Task</h5>
+                        <button id="ab" >Add new Task</button>
                     </div>
-                    <div>
-                        <div id="learnAspire">
-                            <h2>Learn & get inspired</h2>
-                        </div>
-                        <div class="learnAspire">
-                            <div>
-                                <img src="images\get-started-2.svg" alt="">
-                            </div>
-                            <div>
-                                <h2>Getting started</h2>
-                                <h3>Learn how monday.com works</h3>
-                            </div>
-                        </div>
-                        <div class="learnAspire">
-                            <div>
-                                <img src="images\help-center.svg" alt="">
-                            </div>
-                            <div>
-                                <h2>Help center</h2>
-                                <h3>Learn and get support</h3>
-                            </div>
-                        </div>
-                        <div class="learnAspire">
-                            <div>
-                                <img src="images\webinars.svg" alt="">
-                            </div>
-                            <div>
-                                <h2>Join a webinar</h2>
-                                <h3>Watch a live walkthrough</h3>
-                            </div>
-                        </div>
+
+                    <div class="addNewTask">
+                        <h5>Make Your Team</h5>
+                        <button id="ab" ><a href="team.html">Make your team</a></button>
+                    </div>
+
+                    <div id="search">
+                        <h5 for="">Select to see the filtered data</h5>
+                    <select id="select1">
+                        <option value="All">All</option>
+                        <option value="Working on it">Working on it</option>
+                        <option value="Done">Done</option>
+                        <option value="Stuck">Stuck</option>
+                    </select>
                     </div>
                 </div>
+
+                <div id="showtable">
+                    <table id="table1">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>Task</th>
+                                <th>Status</th>
+                                <th>Email</th>
+                                <th>Remark</th>
+                                <th>Delete task</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="newTables"></div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+   
 
 </body>
 
 </html>
 
-
 <script>
-    let menu_item = document.querySelector(".ab");
-    menu_item.addEventListener("mouseover", function () {
-        menu_item.style.backgroundColor = "#333333";
+
+    var modal = document.querySelector("#collectData");
+    let a = document.querySelector("#ab");
+    a.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.style.display = "block";
+        btn.style.backgroundColor = "grey";
+        // showTable();
+
     })
 
-    let menu_item2 = document.querySelector(".ab");
-    menu_item2.addEventListener("mouseleave", function () {
-        menu_item2.style.backgroundColor = "#292f4c";
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            a.style.backgroundColor = ""
+        }
+    }
+
+    //form data collection from here   
+
+    document.querySelector("#formData").addEventListener("submit", CollectData);
+    document.querySelector("#formData").addEventListener("submit", ResetData);
+    document.querySelector("#formData").addEventListener("submit", DisplayOff);
+    document.querySelector("#WorkArea").addEventListener("click", function(){
+        window.location.href="plan.html";
     })
 
+    let collected_Data = JSON.parse(localStorage.getItem("task_details")) || [];
 
-    "use strict";
-    const allQuestions = document.querySelectorAll(".main-item");
-    const questionBlock = document.querySelectorAll(".main-list");
+    showData(collected_Data);
 
-    allQuestions.forEach((mainItem) => {
-        console.log(mainItem)
-        mainItem.addEventListener("click", function () {
-            const answerOutput = mainItem.querySelector(".answer");
-            const question = mainItem.querySelector(".question");
-            const arrow = mainItem.querySelector(".arrow");
+    function ResetData() {
+        document.querySelector("#name").value = "";
+        document.querySelector("#personId").value = "";
+        document.querySelector("#Task").value = "";
+        document.querySelector("#remark").value = "";
+        document.querySelector("#email").value = "";
+        document.querySelector("#status").value = "";
 
-            answerOutput.classList.toggle("shown");
-            question.classList.toggle("active");
-            arrow.classList.toggle("rotate");
+    }
+
+    function CollectData(event) {
+        event.preventDefault();
+        let name = document.querySelector("#name").value;
+        let id = document.querySelector("#personId").value;
+        let task = document.querySelector("#Task").value;
+        let remark = document.querySelector("#remark").value;
+        let mail = document.querySelector("#email").value;
+        let status = document.querySelector("#status").value;
+        console.log(status);
+
+
+        let obj_data = { name, id, task, remark, mail, status };
+
+        collected_Data.push(obj_data);
+        localStorage.setItem("task_details", JSON.stringify(collected_Data));
+        showData(collected_Data);
+    }
+
+    function showData(collected_Data) {
+        document.querySelector("tbody").innerHTML = ""
+        collected_Data.forEach(function (elem, i) {
+            let row = document.createElement("tr");
+            let name = document.createElement("td");
+            name.innerText = elem.name;
+            let task = document.createElement("td")
+            task.innerText = elem.task
+            let remark = document.createElement("td");
+            remark.innerText = elem.remark;
+            let email = document.createElement("td");
+            email.innerText = elem.mail;
+            let status = document.createElement("td")
+            status.innerText = elem.status;
+            if (elem.status === "Working on it") {
+                status.style.color = "orange";
+            }
+            else if (elem.status === "Stuck") {
+                status.style.color = "red";
+            }
+            else if (elem.status === "Done") {
+                status.style.color = "green";
+            }
+
+
+            let delete_Task = document.createElement("td");
+            delete_Task.innerText = "Delete Task";
+            delete_Task.style.color = "red";
+
+            delete_Task.addEventListener("click", Deleter);
+
+            row.append(name, task, status, email, remark, delete_Task);
+
+            document.querySelector("tbody").append(row);
+
+
         });
-    });
+
+        function Deleter(elem, i) {
+
+            collected_Data.splice(i, 1);
+            localStorage.setItem("task_details", JSON.stringify(collected_Data));
+            showData(collected_Data);
+        }
+
+    }
+
+    document.querySelector("#select1").addEventListener("change", function () {
+        filterit = document.querySelector("#select1").value;
+        console.log(filterit);
+        if(filterit!=="All")
+        {
+            let filtered_Data = collected_Data.filter((item) => {
+                ;
+                return item.status == filterit;
+            })
+            showData(filtered_Data);
+        }
+        else if(filterit==="All"){
+            showData(collected_Data);
+        }
 
 
-//for invite functionality
+    })
 
-var modal = document.getElementById("inviteMem");
+    let i=1;
+    function showTable(){
+        i++;
+       
+        let newDiv= document.createElement("div");
+        let newTable= document.querySelector("#newTables");
+        newDiv.innerHTML=
+        `<table id="table${i}">
+                    <thead>
+                        <tr>
+                            <th>Person</th>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Email</th>
+                            <th>Remark</th>
+                            <th>Delete task</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+        `
+       newTable.append(newDiv);
+       
+     
+    }
 
-var btn = document.getElementById("inviteBtn");
+    function DisplayOff(){
+            modal.style.display = "none";
+            a.style.backgroundColor = ""
+        }
 
-btn.onclick = function() {
-  modal.style.display = "block";
-  btn.style.backgroundColor= "grey";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    btn.style.backgroundColor= ""
-  }
-}
 
 document.querySelector("#dashboardMain").addEventListener("click",function(){
     window.location.href= "dashboard.html";
 })
-
-document.querySelector("#WorkArea").addEventListener("click", function(){
-        window.location.href="plan.html";
-    })
-
-
 
 </script>
