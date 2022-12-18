@@ -1,3 +1,523 @@
+
+ @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+        body {
+            background-color: #fff;
+        }
+
+        #dashboard {
+            width: 100%;
+            height: 98vh;
+            margin: auto;
+            display: flex;
+        }
+
+        #main1 {
+            width: 5%;
+            height: 97vh;
+            height: 100%;
+            background-color: #292f4c;
+        }
+
+        #main1>div:nth-child(1) {
+            width: 69px;
+            height: 42%;
+            display: flex;
+            margin-top: 10px;
+            flex-direction: column;
+        }
+
+        #main1>div:nth-child(3) {
+            width: 69px;
+            height: 35%;
+            display: flex;
+            margin-top: 10px;
+            flex-direction: column;
+        }
+
+
+        #main1>div:nth-child(2) {
+            width: 69px;
+            height: 20%;
+        }
+
+        #main1>div>div {
+            width: 98%;
+            height: 16%;
+        }
+
+        #main2 {
+            width: 94%;
+            height: 180vh;
+            height: 100%;
+            margin: auto;
+            overflow-y: auto;
+        }
+
+        #main2::-webkit-scrollbar {
+            display: none;
+        }
+
+        #main2_child_1 {
+            width: 98%;
+            height: 12%;
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        #main2_child_1>div {
+            width: 33%;
+            height: 99%;
+        }
+
+        #main2_child_1>div:nth-child(1)>div {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        #main2_child_1>div:nth-child(3) {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #main2_child_1>div:nth-child(3)>div {
+            width: 40%;
+            height: 50%;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #main2_child_1>div:nth-child(3)>div:nth-child(1) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            line-height: 1.5;
+            color: #323338;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #main2_child_1>div:nth-child(3)>div>button {
+            padding: 11px 30px;
+            font-size: 16px;
+            color: #fff;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            background-color: #0073EA;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+        #main2_child_1>div:nth-child(1)>div>.message1 {
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 0.5em;
+            margin: 0;
+            padding: 0;
+            line-height: 1.1;
+            vertical-align: baseline;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #main2_child_1>div:nth-child(1)>div>.message2 {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 18px;
+            letter-spacing: 0;
+            padding: 0;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #main2_child_2 {
+            width: 98%;
+            height: 85%;
+            /* border: 2px solid rgb(29, 37, 106); */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #left_panel {
+            width: 80%;
+            margin: 15px;
+            /* border: 2px solid brown; */
+
+            background-color: var(--white);
+            max-width: 900px;
+            width: 90%;
+            border-radius: 8px;
+            height: 110%;
+            -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+
+        /* Properties fro left panel elements */
+
+
+        .main-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-left: 3rem;
+            margin-right: 3rem;
+            margin-top: 3.5rem;
+            gap: 0.2rem;
+            height: 100%;
+        }
+
+        /* Q List */
+
+        .main-item {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            margin: 10px 0px;
+            height: 100%;
+        }
+
+        .main-item p {
+            font-size: 1.2rem;
+        }
+
+        .arrow-block {
+            width: 2rem;
+            text-align: center;
+            height: 100%;
+
+        }
+
+        .arrow {
+            background-repeat: no-repeat;
+            background-size: 25%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow.rotate {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+            transform-origin: 45% 45%;
+        }
+
+        .question {
+            display: flex;
+            flex-direction: row;
+            transition: all ease-in-out 0.3s;
+        }
+
+        .question>div:nth-child(2)>h1 {
+            margin: 0px;
+            margin-top: 7px;
+            padding: 0px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #323338;
+            line-height: 1;
+            vertical-align: baseline;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        .question.active {
+            font-weight: bold;
+        }
+
+        .answer {
+            display: none;
+        }
+
+        .answer.shown {
+            width: 30%;
+            display: block;
+            padding: 10px;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border: 1px solid;
+            border-color: #e6e9ef;
+            border-radius: 8px;
+
+
+        }
+
+        .answer.shown>div>button {
+            padding: 20px;
+            background-color: #f65f7c;
+            color: white;
+            border-radius: 8px;
+            border: none;
+            font-size: 17px;
+            font-weight: bold;
+            margin-left: 5px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+
+        }
+
+        .answer.shown>div:nth-child(2) {
+            display: flex;
+            margin-top: 2px;
+        }
+
+        .answer.shown>div:nth-child(2)>div:nth-child(1) {
+            width: 15%;
+            /* font-weight: 700;
+            font-size: 16px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            margin-top: 5px; */
+        }
+
+        .answer.shown>div:nth-child(2)>div:nth-child(2) {
+            width: 85%;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            margin-top: 5px;
+        }
+
+        .answer.shown>div:nth-child(2)>div:nth-child(2)>a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1f76c2
+        }
+
+        .answer.shown>div:nth-child(2)>div:nth-child(1)>h4 {
+            margin: 0px;
+            padding: 0px;
+            width: 85%;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+
+        /* Properties fro left panel elements ends here */
+
+        #right_panel {
+            width: 20%;
+            margin: 15px;
+            /* border: 2px solid black; */
+        }
+
+        #right_panel>div:nth-child(1) {
+            width: 94%;
+            height: auto;
+            padding: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 4px;
+        }
+
+        #right_panel>div:nth-child(2) {
+            width: 94%;
+            height: auto;
+        }
+
+        #right_panel>div>#learnAspire>h2 {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #right_panel>div>.learnAspire {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 15px 0px;
+        }
+
+        #right_panel>div>.learnAspire>div:nth-child(1) {
+            width: 20%;
+            height: auto;
+        }
+
+        #right_panel>div>.learnAspire>div:nth-child(2) {
+            width: 70%;
+            height: auto;
+        }
+
+        #right_panel>div>.learnAspire>div:nth-child(2)>h2 {
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            margin-bottom: 8px;
+            font-size: 14px;
+            vertical-align: baseline;
+            line-height: 1.1;
+        }
+
+        #right_panel>div>.learnAspire>div:nth-child(2)>h3 {
+            font-weight: normal;
+            width: 100%;
+            margin: 0px;
+            line-height: 1;
+            vertical-align: baseline;
+            font-size: 14px;
+        }
+
+        #right_panel>div>div:nth-child(2)>div {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            margin-top: 12px;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #right_panel>div>div:nth-child(2)>button {
+            padding: 10px 40px;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 16px;
+            border: 1px solid;
+            border-color: #e6e9ef;
+            color: #323338;
+            background-color: rgba(0, 0, 0, 0);
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        .ab {
+            width: 40%;
+            padding: 5px;
+            margin: auto;
+            color: #ffffff;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            padding: 6px;
+        }
+
+        #inviteMem {
+            position: fixed;
+            z-index: 1;
+            left: 0%;
+            top: 0%;
+            display: none;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            padding: 0px;
+            box-shadow: rgb(0 0 0) 0px 6px 20px 0px;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+
+        #inviteMem>div {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 320px;
+            margin: auto;
+            background-color: #fff;
+            margin-top: 150px;
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 8px;
+            padding: 40px;
+
+        }
+
+        #inviteMem>div>div {
+            margin: 10px 0px;
+        }
+
+        /*next one is Invite Members  */
+        #inviteMem>div>div:nth-child(1) {
+            font-size: 22px;
+            font-weight: 300;
+            color: #323338;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            line-height: 1.1;
+            box-sizing: border-box;
+            vertical-align: baseline;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(1) {
+            font-size: 16px;
+            color: #323338;
+            display: flex;
+            align-items: center;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(1)>svg {
+            margin-right: 5px;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(2)>input {
+            width: 94%;
+            height: 40px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #323338;
+            border: 1px solid;
+            border-radius: 3px;
+            border-color: #c3c6d4;
+            padding: 2px 0px 3px 6px;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(2)>input::placeholder {
+            font-size: 16px;
+            font-weight: 100;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div {
+            margin: 10px 0px;
+            font-size: 14px;
+            font-weight: 300;
+            color: #323338;
+        }
+
+        #inviteMem>div>div:nth-child(2)>div:nth-child(3) {
+            display: flex;
+            margin: 10px 0px;
+        }
+
+        #inviteMem>div>div:nth-child(3) {
+            height: 100px;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: right;
+        }
+
+        #inviteMem>div>div:nth-child(3)>div>button {
+            border: none;
+            background-color: #0060B9;
+            color: white;
+            padding: 8px 19px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            border-radius: 4px;
+        }
+=======
 #divOf_addmember{
   
     border-radius: 10px;

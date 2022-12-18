@@ -5,12 +5,229 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Work Panel</title>
     <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            color: #323338;
+            font-size: 14px;
+        }
+        #mainAll{
+            width: 100%;
+            height: 100vh;
+            margin: auto;
+            display: flex;
+        }
+
+        #container {
+            width: 90%;
+            margin: 0px auto;
+            height: auto;
+            border: 1px solid #c3c6d4;
+            padding: 30px;
+        }
+
+        #main {
+            display: flex;
+
+        }
+        #main>div:nth-child(2) {
+            width: 75%;
+            padding: 0px 20px;
+        }
+
+        #main>div:nth-child(1) {
+            width: 25%;
+            border-right: 1px solid #c3c6d4;
+        }
+
+        
+
+        #title {
+            text-align: left;
+            border-bottom: 1px solid #c3c6d4;
+
+        }
+
+        #select1 {
+            margin: auto;
+            width: 60%;
+            height: 40px;
+            border: 1px solid #c3c6d4;
+            font-size: 14px;
+        }
+
+        #search>h5 {
+            font-size: 14px;
+        }
+
+        table {
+            font-size: 14px;
+            width: 100%;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            border-collapse: collapse;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        thead tr {
+            background-color: #ffffff;
+            border: 1px solid #c3c6d4;
+            border-radius: 4px;
+        }
+
+        th {
+            font-size: 14px;
+        }
+
+        td {
+            font-size: 13px;
+            border: 1px solid #c3c6d4;
+            border-radius: 4px;
+        }
+
+        th,
+        td {
+            padding: 8px 5px;
+            border-radius: 4px;
+        }
+
+        tr {
+            border-bottom: 1px solid #c3c6d4;
+        }
+
+        th {
+            border: 1px solid #c3c6d4;
+        }
+
+        #collectData {
+            position: fixed;
+            z-index: 1;
+            left: 0%;
+            top: 0%;
+            display: none;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            padding: 0px;
+            box-shadow: rgb(0 0 0) 0px 6px 20px 0px;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+        }
+        #collectData>div{
+            background-color: #ffffff;
+            width: 500px;
+            margin: auto;
+            background-color: #fff;
+            margin-top: 60px;
+            border: 2px solid #c3c6d4;
+            border-radius: 8px;
+            padding: 20px 0px 0px 20px;
+        }
+
+        #collectData>div>form {
+            width: 100%;
+            height: 500px;
+            font-size: 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            
+        }
+
+        #collectData>div>form>input {
+            width: 92%;
+            height: 20px;
+            padding: 10px;
+            margin: 4px 0px 10px 0px;
+            border-radius: 4px;
+            border: 1px solid #c3c6d4;
+        }
+
+        #collectData>div>form>input:nth-last-child(1) {
+            width: 97%;
+            height: 40px;
+            background-color: #ffffff;
+            border: 1px solid #c3c6d4;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            height: 38px;
+        }
+
+        #collectData>div>form>select {
+            width: 97%;
+            height: 43px;
+            padding: 10px;
+            margin: 10px 0px 5px 0px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #c3c6d4;
+        }
+        #query{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .addNewTask{
+            padding-bottom: 30px;
+            border-bottom: 1px solid #c3c6d4;
+            font-size: 18px;
+        }
+        .addNewTask>button{
+            padding: 11px 30px;
+            font-size: 16px;
+            color: #fff;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            background-color: #0073EA;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .addNewTask>button>a{
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+
+        }
+    </style>
 </head>
 
 <body>
-    <div id="dashboard">
+    <div id="collectData">
+        <div>
+            <form id="formData">
+                <label for="">Person Name</label><br />
+                <input id="name" type="text" placeholder="Enter Person Name" /><br />
+                <label for="">Person ID</label><br />
+                <input id="personId" type="number" placeholder="Enter Person ID" /><br />
+                <label for="">Task</label><br />
+                <input id="Task" type="text" placeholder="Enter the Task" /><br />
+                <br />
+                <label for="">Remark</label><br />
+                <input id="remark" type="text" placeholder="Enter the remark" /><br />
+                <label for="">Email Address </label><br />
+                <input type="text" id="email" placeholder="Enter Email Address" /><br />
+                <select id="status">
+                    <option value="">Select status</option>
+                    <option value="Working on it">Working on it</option>
+                    <option value="Stuck">Stuck</option>
+                    <option value="Done">Done</option>
+                </select><br />
+                <input type="submit" />
+            </form>
+        </div>
+    </div>
+
+    <div id="mainAll">
+
         <div id="main1">
             <div>
                 <div>
@@ -38,21 +255,17 @@
                             </defs>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab" id="notificationBar">
-
                         <svg viewBox="0 0 20 20" fill="currentColor" width="23" height="23" aria-hidden="true">
-
-                      
-
                             <path
                                 d="M10 2.04999C10.4143 2.04999 10.75 2.38577 10.75 2.79999V3.61058C12.0546 3.75821 13.2785 4.34336 14.2159 5.28079C15.309 6.37389 15.9231 7.85644 15.9231 9.4023C15.9231 11.7406 16.1727 13.0548 16.3959 13.758C16.5068 14.1075 16.6088 14.2984 16.6645 14.3868C16.6835 14.4168 16.697 14.435 16.7038 14.4435C16.9179 14.6455 16.9953 14.9565 16.8964 15.2377C16.7908 15.538 16.5072 15.7389 16.1889 15.7389H12.9529C12.9516 15.8038 12.9418 15.8695 12.9226 15.9348C12.7439 16.5449 12.3725 17.0809 11.864 17.4623C11.3554 17.8437 10.7371 18.05 10.1015 18.05C9.46584 18.05 8.84746 17.8437 8.33891 17.4623C7.83037 17.0809 7.45905 16.5449 7.28027 15.9348C7.26115 15.8695 7.2513 15.8038 7.24997 15.7389H4.00001C3.71313 15.7389 3.45138 15.5752 3.32575 15.3173C3.20248 15.0643 3.23145 14.764 3.39963 14.5394C3.40133 14.5369 3.40486 14.5316 3.41004 14.5235C3.42459 14.5005 3.45231 14.4542 3.48918 14.3812C3.56285 14.2352 3.67358 13.9813 3.78854 13.5917C4.01863 12.812 4.26574 11.4886 4.26574 9.4023C4.26574 7.85644 4.87984 6.37389 5.97293 5.28079C6.865 4.38872 8.01646 3.81567 9.25004 3.63507V2.79999C9.25004 2.38577 9.58582 2.04999 10 2.04999ZM8.80705 15.7389C8.90698 15.9443 9.05465 16.1241 9.2389 16.2623C9.488 16.4491 9.79062 16.55 10.1015 16.55C10.4123 16.55 10.7149 16.4491 10.964 16.2623C11.1483 16.1241 11.2959 15.9443 11.3959 15.7389H8.80705ZM7.03359 6.34145C7.84538 5.52967 8.9464 5.07361 10.0944 5.07361C11.2425 5.07361 12.3435 5.52967 13.1553 6.34145C13.9671 7.15324 14.4231 8.25426 14.4231 9.4023C14.4231 11.8353 14.6814 13.3144 14.9661 14.2117L14.9748 14.2389H5.15815C5.18119 14.1682 5.20426 14.0941 5.22721 14.0163C5.50499 13.075 5.76574 11.6052 5.76574 9.4023C5.76574 8.25426 6.2218 7.15324 7.03359 6.34145Z"
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab">
@@ -65,7 +278,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab">
@@ -75,7 +288,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
                 <div>
                     <div class="ab">
@@ -85,7 +298,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                 </div>
             </div>
             <div></div>
@@ -110,7 +323,7 @@
                                 fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-
+    
                     <div id="inviteMem">
                         <div>
                             <div>
@@ -123,7 +336,7 @@
                                             d="M3 4.25C2.58579 4.25 2.25 4.58579 2.25 5V15C2.25 15.4142 2.58579 15.75 3 15.75H17C17.4142 15.75 17.75 15.4142 17.75 15V5C17.75 4.58579 17.4142 4.25 17 4.25H3ZM3.75 6.71589V14.25H16.25V6.71591L11.802 10.1371C11.2854 10.5346 10.6518 10.75 10 10.75C9.3482 10.75 8.71468 10.5346 8.19805 10.1371L3.75 6.71589ZM15.0455 5.75H4.95456L9.1126 8.94818L9.11265 8.94821C9.36706 9.14393 9.67903 9.25004 10 9.25004C10.321 9.25004 10.633 9.14393 10.8874 8.94821L10.8874 8.94818L15.0455 5.75Z"
                                             fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                                     </svg>Invite with email</div>
-
+    
                                 <div>
                                     <input type="text" placeholder="Enter one or more Email addresses">
                                 </div>
@@ -138,8 +351,8 @@
                                     </div>
                                 </div>
                             </div>
-
-
+    
+    
                             <div>
                                 <div>
                                     <button>Invite</button>
@@ -176,443 +389,218 @@
                 </div>
             </div>
         </div>
-        <div id="main2">
-            <div id="main2_child_1">
-                <div>
-                    <div>
-                        <h2 class="message1">Good evening, Shubham!</h2>
-                        <h1 class="message2">Be proud of what you've done today!</h1>
-                    </div>
-                </div>
-                <div>
-                    <img width="100%" src="images\abcd.png" alt="">
-                </div>
-                <div>
-                    <div>Give feedback</div>
-                    <div><button>Quick Search</button></div>
-                </div>
+
+        <div id="container">
+            <div id="title">
+                <h2>Shubham's Work Panel</h2><br>
             </div>
-            <div id="main2_child_2">
-                <div id="left_panel">
-                    <!-- FAQ Section -->
-                    <section class="faq-section">
-                        <!-- Recently Visited/ Inbox/ My workspace -->
-                        <section class="main-list">
-                            <!--Recently Visited-->
-                            <div class="main-item">
-
-                                <div class="question">
-                                    <div>
-                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
-                                            height="24" role="button" tabindex="0" aria-hidden="false"
-                                            class="icon_component collapsible-icon icon_component--clickable">
-                                            <path
-                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
-                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-
-                                    <div>
-                                        <h1>Recently Visited</h1>
-                                    </div>
-                                </div>
-                                <!-- <p class="answer">You can invite up to 2 additional users on the Free plan. There is no
-                                    limit on
-                                    team members for the Premium plan.</p> -->
-                                <div class="answer">
-                                    <div>
-                                        <img width="100%" src="images\quick_search_recent_board.svg" alt="">
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <svg viewBox="0 0 20 20" fill="currentColor" width="30" height="30"
-                                                aria-hidden="true" aria-label="Public board">
-                                                <path
-                                                    d="M7.5 4.5H16C16.2761 4.5 16.5 4.72386 16.5 5V15C16.5 15.2761 16.2761 15.5 16 15.5H7.5L7.5 4.5ZM6 4.5H4C3.72386 4.5 3.5 4.72386 3.5 5V15C3.5 15.2761 3.72386 15.5 4 15.5H6L6 4.5ZM2 5C2 3.89543 2.89543 3 4 3H16C17.1046 3 18 3.89543 18 5V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V5Z"
-                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div>Your first board</div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <!-- Inbox -->
-                            <div class="main-item">
-
-                                <div class="question">
-                                    <div>
-                                        <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
-                                            height="24" role="button" tabindex="0" aria-hidden="false"
-                                            class="icon_component collapsible-icon icon_component--clickable">
-                                            <path
-                                                d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
-                                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-
-                                    <div>
-                                        <h1>Inbox</h1>
-                                    </div>
-
-                                </div>
-                                <div class="answer">
-                                    <div>
-                                        <img width="25%" src="images\damann.jpg" alt="">
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <h4>Hi</h4>
-                                        </div>
-                                        <div><a href="">@ Shubham Yadav,</a></div>
-                                    </div>
-
-                                </div>
-                                <!-- My Workspace -->
-                                <div class="main-item">
-
-                                    <div class="question">
-                                        <div>
-                                            <svg class="arrow" viewBox="0 0 20 20" fill="currentColor" width="24"
-                                                height="24" role="button" tabindex="0" aria-hidden="false"
-                                                class="icon_component collapsible-icon icon_component--clickable">
-                                                <path
-                                                    d="M12.5303 9.46967L12 10L12.5303 10.5303C12.8232 10.2374 12.8232 9.76256 12.5303 9.46967ZM10.9393 10L7.46967 13.4697C7.17678 13.7626 7.17678 14.2374 7.46967 14.5303C7.76256 14.8232 8.23744 14.8232 8.53033 14.5303L12.5303 10.5303L12 10L12.5303 9.46967L8.53033 5.46967C8.23744 5.17678 7.76256 5.17678 7.46967 5.46967C7.17678 5.76256 7.17678 6.23744 7.46967 6.53033L10.9393 10Z"
-                                                    fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-
-                                        <div>
-                                            <h1>My workspace</h1>
-                                        </div>
-
-                                    </div>
-                                    <div class="answer">
-                                        <div>
-                                            <button>M</button>
-                                        </div>
-                                        <div>
-                                            <div>
-                                                <h4 style="font-weight: 400;">(--)</h4>
-                                            </div>
-                                            <div style="font-weight: 400;">My workspace</div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                        </section>
-                    </section>
-                </div>
-                <div id="right_panel">
-                    <div>
-                        <div>
-                            <img width="100%" src="images\templates-banner.png" alt="">
-                        </div>
-                        <div>
-                            <div>Boost your workflow in minutes with ready-made templates</div>
-                            <button>Explore templates</button>
-                        </div>
+            <div id="main">
+                <div id="query">
+                    <div class="addNewTask">
+                        <h5>Add new Task</h5>
+                        <button id="ab" >Add new Task</button>
                     </div>
-                    <div>
-                        <div id="learnAspire">
-                            <h2>Learn & get inspired</h2>
-                        </div>
-                        <div class="learnAspire">
-                            <div>
-                                <img src="images\get-started-2.svg" alt="">
-                            </div>
-                            <div>
-                                <h2>Getting started</h2>
-                                <h3>Learn how monday.com works</h3>
-                            </div>
-                        </div>
-                        <div class="learnAspire">
-                            <div>
-                                <img src="images\help-center.svg" alt="">
-                            </div>
-                            <div>
-                                <h2>Help center</h2>
-                                <h3>Learn and get support</h3>
-                            </div>
-                        </div>
-                        <div class="learnAspire">
-                            <div>
-                                <img src="images\webinars.svg" alt="">
-                            </div>
-                            <div>
-                                <h2>Join a webinar</h2>
-                                <h3>Watch a live walkthrough</h3>
-                            </div>
-                        </div>
+
+                    <div class="addNewTask">
+                        <h5>Make Your Team</h5>
+                        <button id="ab" ><a href="team.html">Make your team</a></button>
+                    </div>
+
+                    <div id="search">
+                        <h5 for="">Select to see the filtered data</h5>
+                    <select id="select1">
+                        <option value="All">All</option>
+                        <option value="Working on it">Working on it</option>
+                        <option value="Done">Done</option>
+                        <option value="Stuck">Stuck</option>
+                    </select>
                     </div>
                 </div>
+
+                <div id="showtable">
+                    <table id="table1">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>Task</th>
+                                <th>Status</th>
+                                <th>Email</th>
+                                <th>Remark</th>
+                                <th>Delete task</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="newTables"></div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+   
 
 </body>
 
 </html>
 
-
 <script>
-    let body=document.querySelector("body")
-    let menu_item = document.querySelector(".ab");
-    menu_item.addEventListener("mouseover", function () {
-        menu_item.style.backgroundColor = "#333333";
+
+    var modal = document.querySelector("#collectData");
+    let a = document.querySelector("#ab");
+    a.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.style.display = "block";
+        btn.style.backgroundColor = "grey";
+        // showTable();
+
     })
 
-    let menu_item2 = document.querySelector(".ab");
-    menu_item2.addEventListener("mouseleave", function () {
-        menu_item2.style.backgroundColor = "#292f4c";
-    })
-
-
-    <!-- "use strict"; -->
-    const allQuestions = document.querySelectorAll(".main-item");
-    const questionBlock = document.querySelectorAll(".main-list");
-
-    allQuestions.forEach((mainItem) => {
-        console.log(mainItem)
-        mainItem.addEventListener("click", function () {
-            const answerOutput = mainItem.querySelector(".answer");
-            const question = mainItem.querySelector(".question");
-            const arrow = mainItem.querySelector(".arrow");
-
-            answerOutput.classList.toggle("shown");
-            question.classList.toggle("active");
-            arrow.classList.toggle("rotate");
-        });
-    });
-
- // Add member by sachin (start)
-    let flag=false
-//  let addmember=document.querySelector("#addmember")
-//  addmember.addEventListener("click",function(){
-//    if(flag==true){
-//     return
-//    }
-//    createAddmemberFun()
-//  })
-
-
-let addmemberBigDiv=null
-  function createAddmemberFun(){
-    let Bigdiv=document.createElement("div")
-  Bigdiv.setAttribute("id","divOf_addmember")
-  addmemberBigDiv= Bigdiv
-  let crossDiv =document.createElement("div")
-  crossDiv .innerText="X"
-  crossDiv.addEventListener("click",function(){
-    Bigdiv.remove()
-    flag=false
-  })
-  let heading=document.createElement("h1")
-  heading.innerText="Invite to solution Work OS"
-  let p=document.createElement("p")
-  p.innerText="Invite with email"
-  let mailBox=document.createElement("input")
-  mailBox.type="email"
-  mailBox.placeholder="Enter te email address of you team member"
-  let breakLine1=document.createElement("br")
-  let breakLine2=document.createElement("br")
-  let breakLine3=document.createElement("br")
-  let breakLine4=document.createElement("br")
-
-let select=document.createElement("select")
-let option0=document.createElement("option")
-option0.innerText="Select You Choice"
-option0.value=""
-let option1=document.createElement("option")
-option1.innerText="Member"
-option1.value="member"
-let option2=document.createElement("option")
-option2.innerText="viewer (Read only)"
-option2.value="viwer "
-select.append(option0,option1,option2)
- let button=document.createElement("button")
- button.innerText="Invite"
- button.addEventListener("click",function(){
-    flag=false
-    collectMemberEmail(mailBox.value,select.value)
-    Bigdiv.remove()
- })
- flag=true
-  Bigdiv.append(crossDiv,heading,p,mailBox,breakLine1,breakLine2,select,breakLine3,breakLine4, button)
-  body.append( Bigdiv)
-
-  }
-
-
-function  collectMemberEmail(email,status){
-  let data=JSON.parse(localStorage.getItem("addMemberIn-work"))||[]
-  let obj={
-    email:email,
-    status:status,
-  }
-    
-    if(obj.email=="" ||obj.status==""){
-        alert("Please fill data") 
-    }else{
-        let flag=true
-        data.forEach((e)=>{
-            console.log(e)
-            if(e.email==obj.email){
-                flag=false
-            }
-        })
-        if(flag==true){
-            data.push(obj)
-            localStorage.setItem("addMemberIn-work",JSON.stringify(data))
-        }else{
-        alert("This user is already Added")
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            a.style.backgroundColor = ""
         }
     }
-//   if(obj.email!="" &&obj.status!=""){
-//     let flag=true
-//     data.push(obj)
-//     data.forEach((e)=>{
-//         console.log(e)
-//         if(e.email==obj.email){
-//             flag=false
-//         }
-//     })
-   
-//     if(flag==true){
-//         localStorage.setItem("addMemberIn-work",JSON.stringify(data))
-//     }else{
-//     alert("This user is already Added")
-//     }
-//   }else{
-//     alert("Please fill data")
-//   }
 
-}
+    //form data collection from here   
 
-
-
-
-let notification=document.querySelector("#notificationBar")
-notification.addEventListener("click",function(){
-    if(addmemberBigDiv!=null){
-    
-        addmemberBigDiv.remove()
-    }
-  
-    createNotificatioPanel()
-    
-})
-  
-    
-function createNotificatioPanel(){
-   
-    let navbarDiv=document.createElement("div")
-    navbarDiv.setAttribute("id","mySidenav")
-    navbarDiv.setAttribute("class","sidenav")
-    navbarDiv.style.width = "550px";
-    let cross=document.createElement('div')
-    cross.innerText="X"
-    cross.addEventListener("click",function(){
-        navbarDiv.remove()
-        // document.getElementById("mySidenav").style.width = "0";
+    document.querySelector("#formData").addEventListener("submit", CollectData);
+    document.querySelector("#formData").addEventListener("submit", ResetData);
+    document.querySelector("#formData").addEventListener("submit", DisplayOff);
+    document.querySelector("#WorkArea").addEventListener("click", function(){
+        window.location.href="plan.html";
     })
-    let head=document.createElement("h1")
-    head.innerText="Notification"
-    let headOfDiv=document.createElement("div")
-    headOfDiv.setAttribute("id","allFourHead")
-   
-    headOfDiv.style.justifyContent=" space-around"
-    let div1=document.createElement("div")
-    div1.innerText="All"
-    let div2=document.createElement("div")
-    div2.innerText="Unread"
-    let div3=document.createElement("div")
-    div3.innerText="I was Mentioned"
-    let div4=document.createElement("div")
-     div4.innerText="Assigned to me "
-    headOfDiv.append(div1,div2,div3,div4)
-    let hor=document.createElement("hr")
-    hor.style.border="1px solid grey"
-    let image=document.createElement("img")
-    image.src="https://cdn.monday.com/images/notifications-first.svg"
-   
-    let p=document.createElement("p")
-    p.innerText="Here's where you'll get notified in real-time every time someone @mentions you or replies to one of your items"
 
-  let button=document.createElement("button")
-  button.innerText="Invite New Member"
-  button.addEventListener("click",function(){
-   
-    document.getElementById("mySidenav").style.width = "0px";
-    flag=false
-    createAddmemberFun()
-    navbarDiv.remove()
-  })
-  navbarDiv.append(cross,head,headOfDiv,hor,image,p,button)
-body.append(navbarDiv)
-  
-// document.getElementById("mySidenav").style.width = "250px";
-}
+    let collected_Data = JSON.parse(localStorage.getItem("task_details")) || [];
+
+    showData(collected_Data);
+
+    function ResetData() {
+        document.querySelector("#name").value = "";
+        document.querySelector("#personId").value = "";
+        document.querySelector("#Task").value = "";
+        document.querySelector("#remark").value = "";
+        document.querySelector("#email").value = "";
+        document.querySelector("#status").value = "";
+
+    }
+
+    function CollectData(event) {
+        event.preventDefault();
+        let name = document.querySelector("#name").value;
+        let id = document.querySelector("#personId").value;
+        let task = document.querySelector("#Task").value;
+        let remark = document.querySelector("#remark").value;
+        let mail = document.querySelector("#email").value;
+        let status = document.querySelector("#status").value;
+        console.log(status);
 
 
-// let mainDiv2=document.querySelector("#main2")
+        let obj_data = { name, id, task, remark, mail, status };
 
-// let Personlogo=document.querySelector("#person")
-// Personlogo.addEventListener('click',function(){
-//    createPrfileSmallDiv()
-// })
+        collected_Data.push(obj_data);
+        localStorage.setItem("task_details", JSON.stringify(collected_Data));
+        showData(collected_Data);
+    }
+
+    function showData(collected_Data) {
+        document.querySelector("tbody").innerHTML = ""
+        collected_Data.forEach(function (elem, i) {
+            let row = document.createElement("tr");
+            let name = document.createElement("td");
+            name.innerText = elem.name;
+            let task = document.createElement("td")
+            task.innerText = elem.task
+            let remark = document.createElement("td");
+            remark.innerText = elem.remark;
+            let email = document.createElement("td");
+            email.innerText = elem.mail;
+            let status = document.createElement("td")
+            status.innerText = elem.status;
+            if (elem.status === "Working on it") {
+                status.style.color = "orange";
+            }
+            else if (elem.status === "Stuck") {
+                status.style.color = "red";
+            }
+            else if (elem.status === "Done") {
+                status.style.color = "green";
+            }
 
 
-// function createPrfileSmallDiv(){
-//    let div=document.createElement("div")
-//    div.setAttribute("id","divOf_addmember")
-//    div.addEventListener("click",function(){
-//    window.location.href="team.html"
-//    })
-//    body.append(div)
-// }
+            let delete_Task = document.createElement("td");
+            delete_Task.innerText = "Delete Task";
+            delete_Task.style.color = "red";
 
-// Add member by sachin (end)
+            delete_Task.addEventListener("click", Deleter);
 
+            row.append(name, task, status, email, remark, delete_Task);
+
+            document.querySelector("tbody").append(row);
 
 
+        });
+
+        function Deleter(elem, i) {
+
+            collected_Data.splice(i, 1);
+            localStorage.setItem("task_details", JSON.stringify(collected_Data));
+            showData(collected_Data);
+        }
+
+    }
+
+    document.querySelector("#select1").addEventListener("change", function () {
+        filterit = document.querySelector("#select1").value;
+        console.log(filterit);
+        if(filterit!=="All")
+        {
+            let filtered_Data = collected_Data.filter((item) => {
+                ;
+                return item.status == filterit;
+            })
+            showData(filtered_Data);
+        }
+        else if(filterit==="All"){
+            showData(collected_Data);
+        }
 
 
-//for invite functionality
+    })
 
-var modal = document.getElementById("inviteMem");
+    let i=1;
+    function showTable(){
+        i++;
+       
+        let newDiv= document.createElement("div");
+        let newTable= document.querySelector("#newTables");
+        newDiv.innerHTML=
+        `<table id="table${i}">
+                    <thead>
+                        <tr>
+                            <th>Person</th>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Email</th>
+                            <th>Remark</th>
+                            <th>Delete task</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+        `
+       newTable.append(newDiv);
+       
+     
+    }
 
-var btn = document.getElementById("inviteBtn");
+    function DisplayOff(){
+            modal.style.display = "none";
+            a.style.backgroundColor = ""
+        }
 
-btn.onclick = function() {
-  modal.style.display = "block";
-  btn.style.backgroundColor= "grey";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    btn.style.backgroundColor= ""
-  }
-}
 
 document.querySelector("#dashboardMain").addEventListener("click",function(){
     window.location.href= "dashboard.html";
 })
 
-document.querySelector("#WorkArea").addEventListener("click", function(){
-        window.location.href="plan.html";
-    })
-
-
-
 </script>
-
