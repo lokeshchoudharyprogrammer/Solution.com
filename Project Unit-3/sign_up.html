@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sign_up.css">
+</head>
+
+<body>
+    <div id="main">
+    <div id="registerform">
+        <span>
+            <img src="https://i.ibb.co/PtkP22m/Michelle.png"
+        alt="error"></span>
+        <form action="" >
+            <h1>Set Up your account</h1>
+
+           <p> Fill in your profile details.</p>
+            <p>
+                <label for="">Full Name</label><br>
+                <!-- <input type="text" id="fullname" > -->
+               <input type="text" placeholder="Full name" id="fullName">
+
+            </p>
+            <p> <label for="">Email</label><br>
+                <input type="text" id="email" required="required" name="useremailid" placeholder=" mymail@mail.com">
+            </p>
+
+            <p>
+                <label for="">Create a password</label><br>
+                <input type="password" id="password" placeholder="Password"  required="required"/>
+
+            </p>
+            <p>
+                <label for="">Account Name</label><br>
+                <input type="text" id="username" placeholder="Enter Your usename"  required="required"/>
+
+            </p>
+            <p id="checkbox_info">
+                <input type="checkbox" id="box" required="required" placeholder="#"/><span>I agree to the <a href="#">Terms of Service
+                    </a>and<a href="#"> Privacy Policy</a> </span>
+                </p>
+
+            <p class="register button">
+                <input type="submit" value="continue" id="color"  onclick="action"/>
+            </p>
+
+            <p class="change_link">
+                Already have an account?
+                <a href="login.html" class="to_login">Log in</a>
+            </p>
+        </form>
+    </div>
+    <div>
+        <img src="https://dapulse-res.cloudinary.com/image/upload/monday_platform/signup/soft-welcome.png" alt="">
+    </div>
+</div>
+</body>
+
+</html>
+<script src="signup.js"></script>

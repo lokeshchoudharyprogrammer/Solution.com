@@ -1,0 +1,90 @@
+
+
+ body{
+     font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+     font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+     color: #323338;
+     font-size: 14px;
+ }
+ #title{
+     width: 60%;
+     margin: auto;
+     text-align: center;
+ }
+ #title>h2{
+     text-align: center;
+     font-size: 24px; 
+ }
+ #input_container{
+     width: 60%;
+     height: 450px;
+     margin: auto;
+     display: flex;
+     justify-content: center;
+ }
+ #input_container>div>div:nth-child(1){
+     text-align: center;
+     margin-bottom: 30px;
+ }
+ #inputs_admin{
+     width: 70%;
+     margin: auto;
+ }
+ #input_container>div{
+     border: 1px solid #c3c6d4;
+ }
+ #input_container>div:nth-child(1){
+     width: 50%;
+ }
+ #inputs_admin> .i1{
+     display: block;
+     width: 90%;
+     height: 32px;
+     margin: 7px 0px 23px 0px;
+ }
+ #input_container p{
+     color: #666666;
+     text-align: center;
+ }
+ #input_container>div>div>h3{
+     font-size: 16px;
+ }
+ .l1 >a{
+     font-size: 14px;
+     color: #666666;
+     
+ }
+ .button{
+     width: 100%;
+     margin: auto;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     display: flex;
+     justify-content: center;
+ }
+ .button>button>a{
+     text-decoration: none;
+     background-color: #0060B9;
+     color: white;
+ }
+ button{
+     background-color: #0060B9;
+     color: white;
+     border: none;
+     padding: 10px 30px;
+
+ }
+ #forget{
+     margin-right: 60px;
+ }
+ #goToSignup {
+     width: 60%;
+     margin: auto;
+     text-align: center;
+     margin-top: 40px;
+     margin-bottom: 130px;
+ }
+ hr{
+     margin: 30px 0px;
+ }
+ 

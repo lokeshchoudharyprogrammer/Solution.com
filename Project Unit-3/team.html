@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="team.css" />
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainTeamDiv">
+      <div id="fixedDiv">
+        <div>
+          <h1 style="margin-left: 10px">Team's</h1>
+          <p id="addTeam">+ New Team</p>
+          <input
+            type="text"
+            id="searchTeam"
+            placeholder="Search Your Team"
+          /><br /><br />
+          <button id="searchButton">Search</button>
+        </div>
+        <hr style="border: 1px solid rgb(75, 68, 186)" />
+        <p style="font-size: 20px; color: rgb(46, 26, 225); margin-left: 10px">
+          All Users : <span id="noOfusers">0</span>
+        </p>
+        <div id="allUsersAndteam"></div>
+      </div>
+      <div id="informationDiv">
+        <div
+          style="
+            height: 10vw;
+            width: 100%;
+            background-color: rgb(236, 232, 232);
+          "
+        >
+        <img src="https://i.ibb.co/PtkP22m/Michelle.png">
+      </div>
+        <div id="profileMainDiv">
+          <div><h1 id="profileNameofEachUser">All Users</h1></div>
+          <div>
+            <button id="addUserinEachteamButton" style="cursor: pointer;">+ Add Users</button>
+          </div>
+        </div>
+
+        <input id="searchUserOneachTeam" type="text" placeholder="Search users Of this team">
+        <button id="Button_searchUserOneachTeam" >Search</button>
+        <div id="tableHead">
+                <div>Email</div>
+                <div>Status</div>
+                <div>Delete</div>
+              
+        </div>
+        <hr style="border: 1px solid grey" />
+        <div id="addUserEmailAndStatus"></div>
+      </div>
+      
+    </div>
+  </body>
+</html>
+
+<script>
+  let body = document.querySelector("body");
+  let LSofTeamName = JSON.parse(localStorage.getItem("nameOfteam")) || [];
+  let addTeam = document.querySelector("#addTeam");
+  let allUsersAndteam = document.querySelector("#allUsersAndteam");
+  let noOfusers = document.querySelector("#noOfusers");
+  let searchTeam = document.querySelector("#searchTeam");
+  let searchButton = document.querySelector("#searchButton");
+  let profileNameofEachUser = document.querySelector("#profileNameofEachUser");
+  let addUserEmailAndStatus=document.querySelector("#addUserEmailAndStatus")
+   let   addUserinEachteamButton=document.querySelector("#addUserinEachteamButton")
+   let LSaddMemberforEachTeam=JSON.parse(localStorage.getItem("addMemberIn-work"))
+   let LSodfuser_rederonEachTeam=JSON.parse(localStorage.getItem("rederdataonEachTeam"))||[]
+   let searchUserOneachTeam=document.querySelector("#searchUserOneachTeam")
+   let Button_searchUserOneachTeam=document.querySelector("#Button_searchUserOneachTeam")
+
+   Button_searchUserOneachTeam.addEventListener("click",function(){
+    let emailData=searchUserOneachTeam.value
+    let teamName=profileNameofEachUser.innerText
+   
+    displaySeachedUser(emailData,teamName)
+   })
+   let flagOfAdduser=true
+   addUserinEachteamButton.addEventListener("click",function(){
+    if(flagOfAdduser==false){
+      return
+    }
+    flagOfAdduser=false
+    addUserinEachTeam( LSaddMemberforEachTeam)
+   })
+  searchButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    let arr = [];
+
+    let seachingdata = searchTeam.value;
+
+    let flag = false;
+    LSofTeamName.forEach((e) => {
+      if (e.name == seachingdata) {
+        arr.push(e);
+      
+        flag = true;
+      }
+    });
+    if (flag == false) {
+      alert("Not Found Your Team , May be Not here");
+    }else{
+      rederUsers(arr);
+    }
+  });
+let flagOfaddTeam=true
+  addTeam.addEventListener("click", function () {
+if( flagOfaddTeam==false){
+  return
+}
+    flagOfaddTeam=false
+    createformForteam();
+  });
+
+  function createformForteam() {
+    let Bigdiv = document.createElement("div");
+    Bigdiv.setAttribute("id", "divOf_addmember");
+    addmemberBigDiv = Bigdiv;
+    let crossDiv = document.createElement("div");
+    crossDiv.innerText = "X";
+    crossDiv.addEventListener("click", function () {
+      Bigdiv.remove();
+      flagOfaddTeam=true
+      flag = false;
+    });
+    let heading = document.createElement("h1");
+    heading.innerText = "Create New Team for Work";
+    let p = document.createElement("p");
+    p.innerText = "Team name ";
+    let teamnameBox = document.createElement("input");
+    teamnameBox.type = "text";
+    teamnameBox.placeholder = "Enter the name of Your team ";
+    let breakLine1 = document.createElement("br");
+    let breakLine2 = document.createElement("br");
+    let breakLine3 = document.createElement("br");
+    let breakLine4 = document.createElement("br");
+
+   
+    let button = document.createElement("button");
+    button.innerText = "Add Team";
+    button.addEventListener("click", function () {
+      flag = false;
+      collectnameOfteam(teamnameBox.value);
+      rederUsers(LSofTeamName);
+      flagOfaddTeam=true
+      Bigdiv.remove();
+    });
+    flag = true;
+    Bigdiv.append(
+      crossDiv,
+      heading,
+      p,
+      teamnameBox,
+      breakLine1,
+      breakLine2,
+      breakLine4,
+      button
+    );
+    body.append(Bigdiv);
+  }
+
+  function collectnameOfteam(name) {
+    let obj = {
+      name: name,
+      data:[]
+    };
+    LSofTeamName.push(obj);
+    localStorage.setItem("nameOfteam", JSON.stringify(LSofTeamName));
+  }
+
+function numberOfUsers(){
+  let numOfuers = 0;
+  LSaddMemberforEachTeam.forEach((e)=>{
+    numOfuers++
+  })
+  profileNameofEachUser.innerText=`All Users (${numOfuers})`
+  profileNameofEachUser.style.marginLeft="20px"
+  noOfusers.innerText = numOfuers;
+}
+ numberOfUsers()
+
+ 
+
+
+  function rederUsers(data) {
+   
+    allUsersAndteam.innerHTML = null;
+    data.forEach((e, index) => {
+      let div = document.createElement("div");
+      
+      div.style.display="flex"
+      
+      div.addEventListener("click", function () {
+        rederInfoOfUser(index);
+        displaydataOfeachUseronteam( LSofTeamName)
+      });
+      let h2 = document.createElement("p");
+    
+     
+      h2.innerText = e.name +" ("+e.data.length+")----";
+     
+      let remove=document.createElement("p")
+      remove.setAttribute("id","removeTeam")
+      remove.innerText= "(X)"
+      remove.style.float="right"
+    
+      remove.addEventListener("click",function(){
+        removeTeam(index)
+      })
+      div.append(h2,remove);
+      allUsersAndteam.append(div);
+     
+    });
+   
+  }
+  rederUsers(LSofTeamName);
+
+
+  function  removeTeam(index){
+    LSofTeamName.forEach((e,index2)=>{
+      if(index==index2){
+        LSofTeamName.splice(index,1)
+      }
+    })
+    localStorage.setItem("nameOfteam",JSON.stringify( LSofTeamName))
+    rederUsers(LSofTeamName)
+  }
+
+  function rederInfoOfUser(index) {
+    LSofTeamName.forEach((e, index2) => {
+      if (index == index2) {
+        profileNameofEachUser.innerText = e.name;
+      }
+    });
+  }
+
+
+
+
+  function addUserinEachTeam(data) {
+    
+    let Bigdiv = document.createElement("div");
+    
+
+    Bigdiv.setAttribute("id", "divOf_addmember");
+    addmemberBigDiv = Bigdiv;
+    let crossDiv = document.createElement("div");
+    crossDiv.innerText = "X";
+    crossDiv.addEventListener("click", function () {
+      Bigdiv.remove();
+      flag = false;
+    });
+    let heading = document.createElement("h1");
+    heading.innerText = "Select The User For Your Team";
+    let p = document.createElement("p");
+    p.innerText = "User name ";
+   
+    let breakLine1 = document.createElement("br");
+    let breakLine2 = document.createElement("br");
+    let breakLine3 = document.createElement("br");
+    let breakLine4 = document.createElement("br");
+
+    let select=document.createElement("select")
+    select.style.width="90%"
+    select.style.padding="8px"
+    let option1=document.createElement("option")
+    option1.innerText="Select User "
+    option1.value=""
+    select.append(option1)
+   data.forEach((e)=>{
+    let option=document.createElement("option")
+    option.innerText=e.email
+    option.value=e.email
+    select.append(option)
+   })
+   select.addEventListener("change",function(){
+   sendDataToLS(select.value)
+   })
+    
+    let button = document.createElement("button");
+    button.innerText = "Add Team";
+    button.addEventListener("click", function () {
+      flag = false;
+   
+      displaydataOfeachUseronteam( LSofTeamName)
+      rederUsers(LSofTeamName);
+      flagOfAdduser=true
+      Bigdiv.remove();
+    });
+    flag = true;
+    Bigdiv.append(
+      crossDiv,
+      heading,
+      p,
+      select,
+      breakLine1,
+      breakLine2,
+      breakLine4,
+      button
+    );
+    body.append(Bigdiv);
+  
+
+  }
+
+  function  sendDataToLS(data){
+       for(let i=0;i< LSaddMemberforEachTeam.length;i++){
+        if( LSaddMemberforEachTeam[i].email==data){
+                let obj={
+                    email:data,
+                    status:LSaddMemberforEachTeam[i].status
+                }
+                LSofTeamName.forEach((e)=>{
+                    if(e.name==profileNameofEachUser.innerText){
+                        e.data.push(obj)
+                    }
+                })
+                // LSodfuser_rederonEachTeam.push(obj)
+                break;
+            }
+       }
+    
+    localStorage.setItem("nameOfteam",JSON.stringify( LSofTeamName))
+       
+    }
+  function displaydataOfeachUseronteam(data){
+// console.log(data)
+
+addUserEmailAndStatus.innerText=null
+data.forEach((a)=>{
+    if(a.name==profileNameofEachUser.innerText){
+        a.data.forEach((e,index)=>{
+            let div=document.createElement("div")
+    div.setAttribute("id","eachDivOfthreeDiv")
+    let div1=document.createElement("div")
+    div1.innerText=e.email
+    let div2=document.createElement("div")
+    
+   
+            div2.innerText=e.status
+       
+    let div3=document.createElement("div")
+    div3.innerText="Remove"
+    div3.setAttribute("id","removeCell")
+    div3.addEventListener("click",function(){
+      removeUser(index)
+      rederUsers(LSofTeamName);
+    })
+    div.append(div1,div2,div3)
+    addUserEmailAndStatus.append( div)
+        })
+    }
+   
+})
+  
+    
+}
+displaydataOfeachUseronteam( LSofTeamName)
+
+
+function removeUser(index){
+  LSofTeamName.forEach((e)=>{
+    if(e.name==profileNameofEachUser.innerText){
+      e.data.forEach((a,index2)=>{
+        if(index==index2){
+          e.data.splice(index,1)
+        }
+      })
+    }
+  })
+  localStorage.setItem("nameOfteam",JSON.stringify( LSofTeamName))
+  displaydataOfeachUseronteam( LSofTeamName)
+}
+
+
+function displaySeachedUser(emailData,teamName){
+  let obj={}
+  obj.name=teamName
+  let arr=[]
+  LSofTeamName.forEach((e)=>{
+    if(e.name==teamName){
+      e.data.forEach((a)=>{
+        if(a.email==emailData){
+       arr.push(a)
+        }
+      })
+    }
+  })
+    obj.data=arr
+    let array=[]
+    array.push(obj)
+    displaydataOfeachUseronteam( array)
+}
+</script>

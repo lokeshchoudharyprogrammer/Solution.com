@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<style>
+		.cap {
+		text-transform: capitalize;
+	}
+	
+	.card {
+		padding: 20px;
+		background-color: #181b34;
+	}
+	
+	.btn {
+		margin: 5px;
+	}
+	
+	li .Work-title {
+		font-size: 30px;
+		text-transform: capitalize;
+	}
+	
+	li:not(.completed) {
+		font-weight: bold;
+	}
+	*{
+		background-color: #181b34;
+		color: aliceblue;
+	}
+	.z-depth-3 {
+  -webkit-box-shadow:  0px 0px;;
+  box-shadow: 0px 0px;;
+}
+	
+	</style>
+</head>
+<body>
+	<div class="container" id="app">
+
+		<div class="card z-depth-3">
+			<div class="card-header">
+				<h1 class="cap center-align">Work Management</h1>
+			</div>
+			<div class="card-content">
+				<div class="row">
+					<div class="input-field col s12 l4">
+						<input type="text" v-model="newWorkTitle" @keyup.enter="addWork" placeholder="Work name" autofocus>
+					</div>
+					<div class="input-field col s12 l4">
+						<select name="filter" id="Work-filter" @change="WorksFilter" v-model="filterType">
+							<option :value="allWorks" selected="true">all</option>
+							<option :value="WorkDone">Completed</option>
+							<option :value="WorkNotDone">Not Completed</option>
+						</select>
+						<label for="Work-filter">Work Filter</label>
+					</div>
+					<div class="col s12 l4">
+						<div class="row">
+							<div class="col s3">
+								<a href="#" @click.prevent="clearWorksList" class="btn red-text transparent z-depth-0 tooltipped" data-position="top" data-tooltip="Remove All Works">
+									<i class="fa fa-fw fa-broom"></i>
+								</a>
+							</div>
+							<div class="col s3">
+								<a href="#" @click.prevent="deleteCompletedWorks" class="btn orange-text transparent z-depth-0 tooltipped" data-position="top" data-tooltip="Remove Completed Works">
+									<i class="fa fa-fw fa-clipboard-check"></i>
+								</a>
+							</div>
+							<div class="col s3">
+								<a href="#" @click.prevent="makeAllCompleted" class="btn green-text transparent z-depth-0 tooltipped" data-position="top" data-tooltip="make All Works Completed">
+									<i class="fa fa-fw fa-check-circle"></i>
+								</a>
+							</div>
+							<div class="col s3">
+								<a href="#" @click.prevent="makeAllNotCompleted" class="btn blue-text transparent z-depth-0 tooltipped" data-position="top" data-tooltip="make All Works Completed">
+									<i class="fa fa-fw fa-clock"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cap col s12 l4">
+						<h5>total Work: {{WorkList.length}}</h5>
+					</div>
+					<div class="cap col s12 l4">
+						<h5>completed Work: {{completedWorksLength()}}</h5>
+					</div>
+					<div class="cap col s12 l4">
+						<h5>not completed Work: {{notCompletedWorksLength()}}</h5>
+					</div>
+				</div>
+			</div>
+			<div class="">
+	
+				<template v-if="WorksFilter() != ''">
+					<div :class="{hide: editingValue != ''}">
+						<ul class="collection">
+							<li class="collection-item" v-for="(Work, index) in WorksFilter()" :class="{completed: Work.isCompleted}">
+								<label>
+									<input type="checkbox" v-model="Work.isCompleted" :checked="Work.isCompleted">
+									<span>
+										<span class="Work-title" v-text="Work.title"></span>
+									</span>
+									<span>
+										<a href="#" class="btn-floating right transparent z-depth-0 center-align tooltipped" data-position="top" data-tooltip="Delete" @click.prevent="deleteWork(index)">
+											<i class="fa fa-fw fa-trash red-text"></i>
+										</a>
+										<a href="#" class="btn-floating right transparent z-depth-0 center-align tooltipped" data-position="top" data-tooltip="Edit" @click.prevent="editWork(index)">
+											<i class="fa fa-fw fa-pen green-text"></i>
+										</a>
+									</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<div :class="{hide: editingValue == ''}">
+						<div class="input-field">
+							<input type="text" v-model="editingValue" @keyup.enter="updateWork()" @keyup.esc="cancelEditing()">
+						</div>
+					</div>
+				</template>
+				<template v-else>
+					<h3 class="cap center">no Work in the list</h3>
+				</template>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+<script>
+	
+$(function(){
+	$('.tooltipped').tooltip();
+	$("select").formSelect();
+});
+
+
+var dataStorageName = "WorkList",
+		WorkListStorage = {
+			fetch: function() {
+				return JSON.parse(localStorage.getItem(dataStorageName) || '[]');
+			},
+			save: function(Works) {
+				return localStorage.setItem(dataStorageName, JSON.stringify(Works));
+			}
+		};
+
+new Vue({
+	el: '#app',
+	data: {
+		newWorkTitle: '',
+		allWorks: 'all',
+		WorkDone: 'completed',
+		WorkNotDone: 'notCompleted',
+		filterType: this.allWorks,
+		editingValue: '',
+		WorkIndexToEdit: '',
+		WorkList: WorkListStorage.fetch(),
+	},
+	methods: {
+		addWork: function() {
+			if (this.newWorkTitle.trim() != '') {
+				this.WorkList.push({
+					title: this.newWorkTitle,
+					isCompleted: false,
+				});
+				this.newWorkTitle = '';
+			}
+		},
+		editWork: function(WorkIndex) {
+			this.editingValue = this.WorkList[WorkIndex].title;
+			this.WorkIndexToEdit = WorkIndex;
+		},
+		updateWork: function() {
+			this.WorkList[this.WorkIndexToEdit].title = this.editingValue;
+			this.editingValue = '';
+		},
+		deleteWork: function(WorkIndex){
+			let confirmAlert = confirm(`Are you sure you want to delete ${this.WorkList[WorkIndex].title} Work ?`);
+			if (confirmAlert) {
+				this.WorkList.splice(WorkIndex, 1);
+			}
+		},
+		clearWorksList: function() {
+			let confirmAlert = confirm(`Are you sure you want to delete all Work Lis ?`);
+			if (confirmAlert) {
+				this.WorkList.splice(0, this.WorkList.length);
+			}
+		},
+		deleteCompletedWorks: function() {
+			let confirmAlert = confirm(`Are you sure you want to delete all completed Works ?`);
+			if (confirmAlert) {
+				this.WorkList.filter((el) => {
+					if (el.isCompleted) {
+						this.WorkList.splice(this.WorkList.indexOf(el), 1);
+					}
+				});
+			}
+		},
+		WorksFilter: function() {
+			var WorkListAfterFilter;
+			var ft = this.filterType;
+			if (ft == this.WorkDone) {
+				WorkListAfterFilter = this.WorkList.filter((el) => {
+					return el.isCompleted;
+				});
+			} else if (ft == this.WorkNotDone) {
+				WorkListAfterFilter = this.WorkList.filter((el) => {
+					return ! el.isCompleted;
+				});
+			} else if (ft == this.allWorks) {
+				WorkListAfterFilter = this.WorkList;
+			} else {
+				WorkListAfterFilter = this.WorkList;
+			}
+			return WorkListAfterFilter;
+		},
+		completedWorksLength: function() {
+			return this.WorkList.filter((el) => {
+				if (el.isCompleted) {
+					return el;
+				}
+			}).length;
+		},
+		notCompletedWorksLength: function() {
+			return this.WorkList.filter((el) => {
+				if (! el.isCompleted) {
+					return el;
+				}
+			}).length;
+		},
+		makeAllCompleted: function() {
+			return this.WorkList.forEach((el) => {
+				el.isCompleted = true;
+			});
+		},
+		makeAllNotCompleted: function() {
+			return this.WorkList.forEach((el) => {
+				el.isCompleted = false;
+			});
+		},
+		cancelEditing: function() {
+			this.editingValue = '';
+		},
+	},
+	watch: {
+		WorkList: {
+			handler: function(WorkList) {
+				WorkListStorage.save(WorkList);
+			},
+			deep: true,
+		}
+	},
+});
+</script>
