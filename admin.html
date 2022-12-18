@@ -4,9 +4,169 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Admin Panel</title>
+    <style>
+ 
+body{
+    font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            color: #323338;
+            font-size: 14px;
+} 
+#container{
+    width: 90%;
+    margin: auto;
+    height: 600px;
+    border: 1px solid #c3c6d4;
+    border-radius: 8px;
+    padding: 30px;
+}
+#main{
+    display: flex;
+
+}
+#main>div:nth-child(1){
+  width: 25%;
+  border-right: 1px solid #c3c6d4;
+}
+#main>div:nth-child(2){
+    width: 75%;
+    padding: 0px 20px;
+}
+#title{
+    text-align: center;
+    border-bottom: 1px solid #c3c6d4;;
+}
+#select1{
+  margin: auto;
+  width:60%;
+  height: 40px;
+  border: 1px solid #c3c6d4;
+  font-size: 14px;
+}
+#search>h5{
+    font-size: 14px;
+}
+table{
+  font-size: 14px; 
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  border-collapse: collapse;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+thead tr{
+  background-color:#0060B9;
+  color: white;
+}
+th{
+  font-size: 14px;
+}
+td{
+  font-size: 13px;
+}
+th,td{
+  padding: 8px 5px;
+}
+tr{
+  border-bottom: 1px solid #c3c6d4;
+}
+th{
+  border: 1px solid #c3c6d4;
+}
+
+    </style>
 </head>
 <body>
+    <div id="container">
+        <div id="title">
+            <h2>Admin Dashoard</h2><br>
+        </div>
+        <div id="main">
+            <div id="search">
+                <h5 for="">Select to see the filtered data</h5>
+            <select id="select1">
+                <option value="">All</option>
+                <option value="Subscribed">Subscribed</option>
+                <option value="Not Subscribed">Not Subscribed</option>
+            </select>
+            </div>
+            <div id="showtable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Password</th>
+                            <th>Delete User</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
+
+
+<script>
+let signupdataJS = JSON.parse(localStorage.getItem("signupdata")) || [];
+
+
+show=(signupdataJS)=>{
+    document.querySelector("tbody").innerHTML="";
+    signupdataJS.forEach((item,i)=>{
+        let name=document.createElement("td");
+        name.innerText=item.name;
+
+        let email=document.createElement("td");
+        email.innerText=item.email;
+
+        let phone=document.createElement("td");
+        phone.innerText=item.phone;
+
+        let password=document.createElement("td");
+        password.innerText=item.pass;
+
+        let delet= document.createElement("td");
+        delet.style.backgroundColor= "red";
+        delet.addEventListener("click", deleter);
+
+        let tr=document.createElement("tr");
+        tr.append(name,email,phone,password,delet);
+
+        document.querySelector("tbody").append(tr);
+    })
+
+}
+
+show(signupdataJS);
+
+document.querySelector("#select1").addEventListener("change",function(){
+    filterit=document.querySelector("#select1").value;
+    console.log(filterit);
+    if(filterit!=="")
+    {
+        let filtered_Data=signupdataJS.filter((item)=>{;
+        return item.subscribed==filterit;
+        })
+        show(filtered_Data);
+    }
+    else{
+        show(signupdataJS);
+    }
+    
+})
+</script>
+
+
+
+
+
+
+
+
