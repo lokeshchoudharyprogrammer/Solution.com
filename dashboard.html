@@ -978,25 +978,26 @@ function  collectMemberEmail(email,status){
   let data=JSON.parse(localStorage.getItem("addMemberIn-work"))||[]
   let obj={
     email:email,
-    status:status,
+    status:status
   }
 
-  if(obj.email!="" &&obj.status!=""){
+  if(obj.email!="" && obj.status!=""){
     let flag=true
     data.push(obj)
     data.forEach((e)=>{
+        console.log(e)
         if(e.email==obj.email){
             flag=false
+           
         }
     })
    
-    if(flag==true){
-        localStorage.setItem("addMemberIn-work",JSON.stringify(data))
+    if(flag==false){
+        alert("This user is already Added")
+      
     }else{
-    alert("This user is already Added")
+        localStorage.setItem("addMemberIn-work",JSON.stringify(data))
     }
-
-
 
   }else{
     alert("Please fill data")
