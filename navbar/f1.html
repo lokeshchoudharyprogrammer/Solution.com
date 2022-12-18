@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .footer-container {
+            /* background-color: #232323; */
+            display: block; 
+            font-family: 'Roboto', sans-serif;
+            /* padding: 20px 0px 0px 0px;  */
+        }
+        .footer {
+            display: flex;
+            width: 95%;
+            margin: auto;
+            /* border: 1px solid red; */
+            height: 500px;
+        }
+        .footer-1 {
+            /* display: flex; */
+            flex-direction: column;
+            line-height: 30px;
+            color: #aaaaaa;
+            margin-right: 50px;
+            /* border: 1px solid green; */
+            width: 20%;
+            /* text-align: center; */
+            
+        }
+        .footer-1 img{
+            width: 100px;
+        }
+        .footer-1 p{
+            margin-top: 10px;
+        }
+        .footer-2 {
+            /* display: flex; */
+            flex-direction:column ; 
+            line-height: 30px;
+            color: #aaaaaa;
+            margin-right: 50px;
+            width: 20%;
+            /* border: 1px solid green; */
+            /* text-align: center; */
+            /* width: 500px; */
+        }
+        
+        .footer-2 p{
+            margin-top: 10px;
+        }
+        .footer-2 h2{
+            font-size: 18px;
+        }
+        .footer-3 {
+            /* display: flex; */
+            flex-direction: column;
+            line-height: 30px;
+            color: #aaaaaa;
+            margin-right: 50px;
+            /* border: 1px solid green; */
+            /* text-align: center; */
+            width: 30%;
+           
+            
+        }
+        .footer-3 img{
+            width: 30px;
+            /* border: 1px solid red; */
+            margin-top: 10px;
+        }
+        .footer-3 p{
+            margin-top: 10px;
+              /* float: right; */
+        }
+        
+        .footer-3 h2{
+            font-size: 18px;
+        }
+        .footer-3 h2~h2{
+            font-size: 18px;
+            margin-top: 50px;
+        }
+        .footerEnd {
+            display: flex;
+            width: 90%;
+            margin: 35px auto;
+            justify-content: space-between;
+            border-top: 2px solid #aaaaaa;
+            padding-bottom: 10px;
+        }
+        .footerEnd > div:last-child {
+            display: flex;
+            color: #fff;
+        }
+        .footerEnd > div:last-child > h3 {
+            margin: 25px 25px 0px 0px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .footerEnd > div > img {
+            margin-top: 10px;
+            width: 80%;
+        }
+        .footerEnd > div:last-child > input {
+            width: 300px;
+            height: 50px;
+            margin-top: 9px;
+            padding-left: 15px;
+            font-size: 14px;
+        }
+        .footerEnd > div:last-child > button {
+            margin-top: 9px;
+            width: 100px;
+            margin-left: -2px;
+            background-color: #dd0285;
+            color: #fff;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 15px;
+            border: none;
+        }
+        .last{
+            /* border: 1px solid red; */
+            width: 80%;
+            position: relative;
+            float: right;
+
+        }
+       
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <div class="footer-1">
+                    <img src="https://i.ibb.co/r4mdw6y/Michelle.png" alt="">
+                    <p>Pricing</p>
+                    <p>Contact us</p>
+                    <p>Templates</p>
+                    <p>SMB</p>
+                    <p>Enterprise</p>
+                    <p>Nonprofits</p>
+                    <p>Apps marketplace</p>
+                    <p>24/7 support</p>
+                </div>
+                <div class="footer-2">
+                    <h2>Features</h2>
+                    <p>Docs</p>
+                    <p>Integration</p>
+                    <p>Automation</p>
+                    <p>Files</p>
+                    <p>Dashboards</p>
+                    <p>Kanban</p>
+                    <p>Gantt</p>
+                </div>
+                <div class="footer-3">
+                    <h2>monday products</h2>
+                    <div>
+                        <img src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/footer/wm_icon_footer.png" alt="">
+                       <div class="last">
+                        <p>monday work management</p>
+                       </div>
+                        
+                    </div>
+                    <div>
+                        <img src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/footer/crm_icon_footer.png" alt="">
+                        <div class="last">
+                            <p>monday sales CRM</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/footer/marketer_icon_footer.png" alt="">
+                        <div class="last">
+                            <p>monday marketer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/footer/projects_icon_footer.png" alt="">
+                        <div class="last">
+                            <p>monday projects</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/footer/monday_dev_product_management_software.png" alt="">
+                        <div class="last">
+                            <p>monday dev</p>
+                        </div>
+                    </div>  
+                    <h2>More by monday.com</h2>
+                    <div>
+                        <img src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/footer/canvas_icon_footer.png" alt="">
+                       <div class="last">
+                        <p>Canvas</p>
+                       </div>
+                    </div>
+                    <div>
+                        <img src="https://dapulse-res.cloudinary.com/image/upload/Generator_featured%20images/Home%20Page%20-%202022%20Rebrand/footer/workforms_icon_footer.png" alt="">
+                        <div class="last">
+                            <p>WorkForms</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="footer-2">
+                   <h2>Use cases</h2> 
+                   <p>Marketing</p>
+                   <p>Project management</p>
+                   <p>Sales</p>
+                   <p>Developers</p>
+                   <p>HR</p>
+                   <p>IT</p>
+                   <p>Operations</p>
+                   <p>Construction</p>
+                </div>
+                <div class="footer-2">
+                  <h2>Company</h2> 
+                  <p>About us</p>
+                  <p>Careers - We're hiring!</p>
+                  <p>monday-U</p>
+                  <p>Press</p>
+                  <p>Customer stories</p>
+                  <p>Become a partner</p>
+                  <p>Sustainability & ESG</p>
+                  <p>Affiliates</p>
+                  <p>Digital Lift</p>
+                  <p>Investor relations</p>
+                </div>
+                <div class="footer-2">
+                   <h2>Resources</h2> 
+                   <p>Help Center</p>
+                   <p>Community</p>
+                   <p>Blog</p>
+                   <p>Webinars</p>
+                   <p>Startup for startup</p>
+                   <p>Global events</p>
+                   <p>App development</p>
+                   <p>Find a partner</p>
+                   <p>Compare</p>
+                </div>
+
+            </div>
+            
+            <div class="footerEnd">
+                <div>
+                    <img src="https://www.beautybebo.com/pub/media/wysiwyg/payment.png" alt="error">
+                </div>
+                <div>
+                    <h3>Signup For Newsletter</h3>
+                    <input type="email" placeholder="Signup For Newsletter">
+                    <button>Subscribe</button>
+                </div>  
+        </div>
+    </footer>
+</body>
+</html>
