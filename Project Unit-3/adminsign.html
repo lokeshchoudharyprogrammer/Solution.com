@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Account</title>
+    <link rel="stylesheet" href="adminsign.css">
+    <style>
+        body{
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            color: #323338;
+            font-size: 14px;
+        }
+        #title{
+            width: 60%;
+            margin: auto;
+            text-align: center;
+        }
+        #title>h2{
+            text-align: center;
+            font-size: 24px; 
+        }
+        #input_container{
+            width: 60%;
+            height: 450px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+        #input_container>div>div:nth-child(1){
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #inputs_admin{
+            width: 70%;
+            margin: auto;
+        }
+        #input_container>div{
+            border: 1px solid #c3c6d4;
+        }
+        #input_container>div:nth-child(1){
+            width: 50%;
+        }
+        #inputs_admin> .i1{
+            display: block;
+            width: 90%;
+            height: 32px;
+            margin: 7px 0px 23px 0px;
+        }
+        #input_container p{
+            color: #666666;
+            text-align: center;
+        }
+        #input_container>div>div>h3{
+            font-size: 16px;
+        }
+        .l1 >a{
+            font-size: 14px;
+            color: #666666;
+            
+        }
+        .button{
+            width: 100%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .button>button>a{
+            text-decoration: none;
+            background-color: #0060B9;
+            color: white;
+        }
+        button{
+            background-color: #0060B9;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+
+        }
+        #forget{
+            margin-right: 60px;
+        }
+        #goToSignup {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 130px;
+        }
+        hr{
+            margin: 30px 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <hr>
+
+    <div id="title"><h2>Admin Sign In</h2></div>
+    <div id="input_container">
+        <div>
+            <div>
+            </div>
+            
+            <div id="inputs_admin">
+                <label  class="l1" for="">Email Address</label>
+                <input required id="mail" class="i1" type="email">
+                <label class="l1" for="">Password</label>
+                <input required id="password" class="i1" type="password">
+                <span><a id="forget" href="">Forgor Password</a></span>
+                <input id="i3" type="checkbox">
+                <label class="l1" for="">Remember Me</label>
+                <p class="l1"><a href="">Privacy Policy</a></p>
+                <div class="button"><button id="signIN">SIGN IN</button></div>
+            </div>
+            <div id="goToSignup">
+                <p>Go to Admin <a href="adminSignup.html"> Signup</a></p>
+            </div>
+            
+        </div>
+    </div>
+    <hr>
+
+</body>
+</html>
+
+<script>
+    signupJS2= JSON.parse(localStorage.getItem("signupLS")) || [];
+
+    document.querySelector("#signIN").addEventListener("click", signIn);
+
+    document.querySelector("#signIN").addEventListener("click", Reset);
+
+
+    function signIn(){
+
+        let email= document.querySelector("#mail").value;
+        console.log(email);
+        let pass= document.querySelector("#password").value;
+        console.log(pass);
+
+        if(email=="" || pass==""){
+            return alert("Fill all Fields.");
+        }
+
+        else{
+            let count=0;
+            signupJS2.forEach(elem => {
+            
+            if(elem.mail==email && elem.password==pass){
+                count++;
+               alert("Sign in Successful.");
+               return window.location.href= "admin.html";
+            }
+        });  
+        
+          if(count===0){
+            return alert("Wrong Credentials!")
+          }
+        }
+        
+    }
+ 
+    function Reset(){
+        document.querySelector("#mail").value="";
+        document.querySelector("#password").value="";
+    }
+
+
+
+</script>

@@ -1,0 +1,20 @@
+.cap {
+	text-transform: capitalize;
+}
+
+.card {
+	padding: 20px;
+}
+
+.btn {
+	margin: 5px;
+}
+
+li .todo-title {
+	font-size: 30px;
+	text-transform: capitalize;
+}
+
+li:not(.completed) {
+	font-weight: bold;
+}

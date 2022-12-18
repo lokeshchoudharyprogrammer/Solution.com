@@ -1,0 +1,240 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+} */
+footer {
+    margin-top: 120px;
+}
+
+.footer-container {
+    /* background-color: #232323; */
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    /* padding: 20px 0px 0px 0px;  */
+}
+
+.footer {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    /* border: 1px solid red; */
+    height: 500px;
+}
+
+.footer-1 {
+    /* display: flex; */
+    flex-direction: column;
+    line-height: 30px;
+    color: #aaaaaa;
+    margin-right: 50px;
+    /* border: 1px solid green; */
+    width: 20%;
+    /* text-align: center; */
+
+}
+
+.footer-1 img {
+    width: 100px;
+}
+
+.footer-1 p {
+    margin-top: 10px;
+}
+
+.footer-2 {
+    /* display: flex; */
+    flex-direction: column;
+    line-height: 30px;
+    color: #aaaaaa;
+    margin-right: 50px;
+    width: 20%;
+    /* border: 1px solid green; */
+    /* text-align: center; */
+    /* width: 500px; */
+}
+
+.footer-2 p {
+    margin-top: 10px;
+}
+
+.footer-2 h2 {
+    font-size: 18px;
+}
+
+.footer-3 {
+    /* display: flex; */
+    flex-direction: column;
+    line-height: 30px;
+    color: #aaaaaa;
+    margin-right: 50px;
+    /* border: 1px solid green; */
+    /* text-align: center; */
+    width: 30%;
+
+
+}
+
+.footer-3 img {
+    width: 30px;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+}
+
+.footer-3 p {
+    margin-top: 10px;
+    /* float: right; */
+}
+
+.footer-3 h2 {
+    font-size: 18px;
+}
+
+.footer-3 h2~h2 {
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.footerEnd {
+    display: flex;
+    width: 90%;
+    margin: 35px auto;
+    justify-content: space-between;
+    border-top: 2px solid #aaaaaa;
+    padding-bottom: 10px;
+}
+
+.footerEnd>div:last-child {
+    display: flex;
+    color: #fff;
+}
+
+.footerEnd>div:last-child>h3 {
+    margin: 25px 25px 0px 0px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footerEnd>div>img {
+    margin-top: 10px;
+    width: 80%;
+}
+
+.footerEnd>div:last-child>input {
+    width: 300px;
+    height: 50px;
+    margin-top: 9px;
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.footerEnd>div:last-child>button {
+    margin-top: 9px;
+    width: 100px;
+    margin-left: -2px;
+    background-color: #dd0285;
+    color: #fff;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+}
+
+.last {
+    /* border: 1px solid red; */
+    width: 80%;
+    position: relative;
+    float: right;
+
+}
+
+@media screen and (min-width: 150px) and (max-width: 399px) {
+    .footerEnd>div:last-child>input {
+        display: none;
+    }
+
+    .subandhad {
+        display: none;
+    }
+
+    .footer-2 {
+        display: none;
+    }
+
+    .footer-2 {
+        display: none;
+    }
+
+    .footer-3 {
+        display: none;
+    }
+
+    .footer {
+        display: flex;
+        width: 95%;
+        margin: auto;
+
+        height: 500px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footerEnd>div>img {
+        margin-top: 10px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+
+        margin-left: 86px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
+    .footerEnd>div:last-child>input {
+        display: none;
+    }
+
+    .subandhad {
+        display: none;
+    }
+
+    .footer-2 {
+        display: none;
+    }
+
+    .footer-2 {
+        display: none;
+    }
+
+    .footer-3 {
+        display: none;
+    }
+
+    .footer {
+        display: flex;
+        width: 95%;
+        margin: auto;
+
+        height: 500px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footerEnd>div>img {
+        margin-top: 10px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+
+        margin-left: 86px;
+    }
+    
+
+}

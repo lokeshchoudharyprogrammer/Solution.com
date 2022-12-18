@@ -1,0 +1,72 @@
+
+ 
+body{
+    font-family: Roboto, Rubik, Noto Kufi Arabic, Noto Sans JP, sans-serif;
+            color: #323338;
+            font-size: 14px;
+} 
+#container{
+    width: 90%;
+    margin: auto;
+    height: 600px;
+    border: 1px solid #c3c6d4;
+    border-radius: 8px;
+    padding: 30px;
+}
+#main{
+    display: flex;
+
+}
+#main>div:nth-child(1){
+  width: 25%;
+  border-right: 1px solid #c3c6d4;
+}
+#main>div:nth-child(2){
+    width: 75%;
+    padding: 0px 20px;
+}
+#title{
+    text-align: center;
+    border-bottom: 1px solid #c3c6d4;;
+}
+#select1{
+  margin: auto;
+  width:60%;
+  height: 40px;
+  border: 1px solid #c3c6d4;
+  font-size: 14px;
+}
+#search>h5{
+    font-size: 14px;
+}
+table{
+  font-size: 14px; 
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  border-collapse: collapse;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+thead tr{
+  background-color:#0060B9;
+  color: white;
+}
+th{
+  font-size: 14px;
+}
+td{
+  font-size: 13px;
+}
+th,td{
+  padding: 8px 5px;
+}
+tr{
+  border-bottom: 1px solid #c3c6d4;
+}
+th{
+  border: 1px solid #c3c6d4;
+}
+
+   
