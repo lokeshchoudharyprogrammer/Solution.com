@@ -238,3 +238,49 @@ footer {
     
 
 }
+
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+   
+   
+    .footerEnd>div:last-child>input {
+        display: none;
+    }
+
+    .subandhad {
+        display: none;
+    }
+
+  
+
+    .footer-7 {
+        display: none;
+    }
+    .footer-3 {
+        display: none;
+    }
+
+    .footer {
+        display: flex;
+        width: 95%;
+        margin: auto;
+
+        height: 500px;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footerEnd>div>img {
+        margin-top: 10px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+
+        margin-left: 86px;
+    }
+    
+
+    
+}
